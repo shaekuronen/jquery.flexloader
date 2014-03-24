@@ -1,22 +1,36 @@
 <!DOCTYPE html>
-<html class="no-js">
+<html>
 <head>
 
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title></title>
-  <meta name="description" content="">
+  <title>jQuery Flexloader</title>
+  <meta name="description" content="Lazyload Flexslider slides, optionally using Picturefill">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- Place favicon.ico and apple-touch-icon(s) in the root directory -->
-<!--
-  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
-  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.css">
--->
+
+  <link rel="stylesheet" href="css/normalize.min.css">
+  <link rel="stylesheet" href="css/main.css">
   <link rel="stylesheet" href="bower_components/flexslider/flexslider.css">
 
 </head>
 <body>
+
+  <!-- header -->
+  <div class="header-container">
+    <header class="wrapper clearfix">
+      <h1 class="title">Flexloader <span style="display:block;font-size:16px;font-weight:normal;">Lazyload Flexslider slides, optionally using Picturefill</span></h1>
+      <nav>
+        <ul>
+          <li><a href="https://github.com/shaekuronen/jquery.flexloader">GITHUB</a></li>
+          <li><a href="http://plugins.jquery.com/flexloader/">JQUERY</a></li>
+          <li><a href="https://www.npmjs.org/~shaekuronen">NPM</a></li>
+        </ul>
+      </nav>
+    </header>
+  </div>
+  <!-- end header -->
 
   <!-- container -->
   <div class="container">
@@ -76,9 +90,9 @@
 
   <script src="bower_components/jquery/dist/jquery.min.js"></script>
   <script src="bower_components/flexslider/jquery.flexslider.js"></script>
+  <script src="js/site/flexslider_lazyloader.js"></script>
   <script src="js/site/global_object.js"></script>
   <script src="js/site/flexslider_init.js"></script>
-  <script src="js/site/flexslider_lazyloader.js"></script>
 
 </body>
 </html>
