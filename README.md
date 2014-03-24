@@ -1,4 +1,4 @@
 jquery.flexloader
 =================
 
-Lazyload Flexslider images, optionally using Picturefill
+Lazyload Flexslider slides, optionally using Picturefill

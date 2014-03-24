@@ -1,0 +1,38 @@
+{
+	"name": "flexloader",
+	"title": "jQuery Flexloader",
+	"description": "Lazyload Flexslider slides, optionally using Picturefill",
+	"keywords": [
+		"jquery",
+		"lazyload",
+		"flexslider",
+		"picturefill",
+		"plugins"
+	],
+	"version": "0.0.1",
+	"author": {
+		"name": "Shae Kuronen",
+		"email": "shae.tml@gmail.com",
+		"url": "https://github.com/shaekuronen"
+	},
+	"maintainers": [
+		{
+			"name": "Shae Kuronen",
+			"email": "shae.tml@gmail.com",
+			"url": "https://github.com/shaekuronen"
+		}
+	],
+	"licenses": [
+		{
+			"type": "MIT",
+			"url": "http://opensource.org/licenses/MIT"
+		}
+	],
+	"bugs": "https://github.com/shaekuronen/jquery.flexloader/issues",
+	"homepage": "http://shaekuronen.github.io/jquery.flexloader",
+	"docs": "https://github.com/shaekuronen/jquery.flexloader#readme",
+	"download": "https://github.com/shaekuronen/jquery.flexloader/archive/master.zip",
+	"dependencies": {
+		"jquery": ">=1.4"
+	}
+}

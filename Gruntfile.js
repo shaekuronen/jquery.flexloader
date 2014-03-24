@@ -3,7 +3,7 @@ module.exports = function(grunt) {
 	grunt.initConfig({
 
 		// Import package manifest
-		pkg: grunt.file.readJSON("boilerplate.jquery.json"),
+		pkg: grunt.file.readJSON("flexloader.jquery.json"),
 
 		// Banner definitions
 		meta: {
@@ -36,6 +36,15 @@ module.exports = function(grunt) {
 			}
 		},
 
+		// copy flexloader source to dist dir
+	copy: {
+	  main: {
+	    files: [
+	      {expand: true, src: ['src/jquery.boilerplate.js'], dest: 'dist/jquery.boilerplate.js', filter: 'isFile'}
+	    ]
+	  }
+	},
+
 		// Minify definitions
 		uglify: {
 			my_target: {
@@ -45,15 +54,6 @@ module.exports = function(grunt) {
 			options: {
 				banner: "<%= meta.banner %>"
 			}
-		},
-
-		// CoffeeScript compilation
-		coffee: {
-			compile: {
-				files: {
-					"dist/jquery.boilerplate.js": "src/jquery.boilerplate.coffee"
-				}
-			}
 		}
 
 	});
@@ -61,9 +61,14 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks("grunt-contrib-concat");
 	grunt.loadNpmTasks("grunt-contrib-jshint");
 	grunt.loadNpmTasks("grunt-contrib-uglify");
-	grunt.loadNpmTasks("grunt-contrib-coffee");
+	grunt.loadNpmTasks("grunt-contrib-copy");
 
-	grunt.registerTask("default", ["jshint", "concat", "uglify"]);
+	grunt.registerTask("release", [
+		"jshint",
+		"concat",
+		"uglify"
+	]);
+
 	grunt.registerTask("travis", ["jshint"]);
 
 };
