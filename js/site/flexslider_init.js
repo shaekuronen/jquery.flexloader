@@ -1,0 +1,25 @@
+;(function($) {
+
+  $(window).load(function() {
+
+    // demo 1 slideshow
+    $('#flexloader-demo-1-slideshow').flexslider({
+      namespace: "flexloader-demo-1-",
+      animation: "slide",
+      prevText: "prev",
+      nextText: "next",
+      keyboard: false,
+      slideshowSpeed: 100000,
+      animationSpeed: 300,
+      start: function(slider) {
+        GLOBAL.flexslider_lazyloader.load_adjacent_slides(slider);
+      },
+      after: function(slider) {
+        GLOBAL.flexslider_lazyloader.load_adjacent_slides(slider);
+      }
+    });
+    // end demo 1 slideshow
+
+  });
+
+}(jQuery));
