@@ -30,9 +30,11 @@
       slideshowSpeed: 100000,
       animationSpeed: 300,
       start: function(slider) {
+        console.log('demo 2 start event');
         GLOBAL.flexslider_lazyloader.load_adjacent_slides(slider);
       },
       after: function(slider) {
+        console.log('demo 2 after animate event');
         GLOBAL.flexslider_lazyloader.load_adjacent_slides(slider);
       }
     });
