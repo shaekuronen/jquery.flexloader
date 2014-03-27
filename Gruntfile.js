@@ -54,7 +54,33 @@ module.exports = function(grunt) {
 			options: {
 				banner: "<%= meta.banner %>"
 			}
-		}
+		},
+
+    responsive_images: {
+      slideshow_slides: {
+        options: {
+          sizes: [
+            {
+              width: 540,
+              height: 270
+            },
+            {
+              width: 720,
+              height: 360
+            },
+            {
+              width: 900,
+              height: 450
+            }
+          ]
+        },
+        files: [{
+          expand: true,
+          src: ['img/slideshow/1080/*.jpg'],
+          custom_dest: 'img/slideshow/{%= width %}/'
+        }]
+      }
+    }
 
 	});
 
@@ -62,6 +88,7 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks("grunt-contrib-jshint");
 	grunt.loadNpmTasks("grunt-contrib-uglify");
 	grunt.loadNpmTasks("grunt-contrib-copy");
+	grunt.loadNpmTasks("grunt-responsive-images");
 
 	grunt.registerTask("release", [
 		"jshint",
@@ -70,5 +97,9 @@ module.exports = function(grunt) {
 	]);
 
 	grunt.registerTask("travis", ["jshint"]);
+
+	grunt.registerTask('resize-slideshow-slides', [
+		'responsive_images:slideshow_slides'
+	]);
 
 };
