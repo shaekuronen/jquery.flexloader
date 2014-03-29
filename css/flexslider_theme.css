@@ -10,7 +10,7 @@ ol li {
 }
 
 .flexslider {
-  margin: 0;
+  margin: 0 0 50px 0;
   background: #fff;
   border: 0;
   position: relative;
@@ -128,7 +128,7 @@ ol li {
 [class*="-control-nav"] {
   width: 100%;
   position: absolute;
-  bottom: -80px;
+  bottom: -60px;
   text-align: center;
 }
 [class*="-control-nav"] li {

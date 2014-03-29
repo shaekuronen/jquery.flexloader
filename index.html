@@ -10,10 +10,13 @@
 
   <!-- Place favicon.ico and apple-touch-icon(s) in the root directory -->
 
+  <!-- css -->
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/main.css">
   <link rel="stylesheet" href="bower_components/flexslider/flexslider.css">
   <link rel="stylesheet" href="css/flexslider_theme.css">
+  <link rel="stylesheet" href="bower_components/prism/themes/prism.css">
+  <!-- end css -->
 
 </head>
 <body>
@@ -36,86 +39,132 @@
   <!-- container -->
   <div class="wrapper clearfix">
 
-    <!-- demo 1 slideshow -->
-    <div id="flexloader-demo-1-slideshow" class="flexslider flexloader-demo-1-slideshow">
+    <!-- demo 1 -->
+    <div class="flexloader-demo-1">
 
-      <h4>Slide Animation - No Picturefill</h4>
+      <h4>Flexslider + Flexloader</h4>
 
-      <ul class="slides">
+      <!-- demo 1 slideshow -->
+      <div id="flexloader-demo-1-slideshow" class="flexslider flexloader-demo-1-slideshow">
 
-        <li>
-          <img src="img/1x1.gif" data-original="img/slideshow/1080/grey01.jpg">
-        </li>
+        <ul class="slides">
 
-        <li>
-          <img src="img/1x1.gif" data-original="img/slideshow/1080/grey02.jpg">
-        </li>
+          <li>
+            <img src="img/1x1.gif" data-original="img/slideshow/1080/grey01.jpg">
+          </li>
 
-        <li>
-          <img src="img/1x1.gif" data-original="img/slideshow/1080/grey03.jpg">
-        </li>
+          <li>
+            <img src="img/1x1.gif" data-original="img/slideshow/1080/grey02.jpg">
+          </li>
 
-        <li>
-          <img src="img/1x1.gif" data-original="img/slideshow/1080/grey04.jpg">
-        </li>
+          <li>
+            <img src="img/1x1.gif" data-original="img/slideshow/1080/grey03.jpg">
+          </li>
 
-        <li>
-          <img src="img/1x1.gif" data-original="img/slideshow/1080/grey05.jpg">
-        </li>
+          <li>
+            <img src="img/1x1.gif" data-original="img/slideshow/1080/grey04.jpg">
+          </li>
 
-        <li>
-          <img src="img/1x1.gif" data-original="img/slideshow/1080/grey06.jpg">
-        </li>
+          <li>
+            <img src="img/1x1.gif" data-original="img/slideshow/1080/grey05.jpg">
+          </li>
 
-        <li>
-          <img src="img/1x1.gif" data-original="img/slideshow/1080/grey07.jpg">
-        </li>
+          <li>
+            <img src="img/1x1.gif" data-original="img/slideshow/1080/grey06.jpg">
+          </li>
 
-        <li>
-          <img src="img/1x1.gif" data-original="img/slideshow/1080/grey08.jpg">
-        </li>
+          <li>
+            <img src="img/1x1.gif" data-original="img/slideshow/1080/grey07.jpg">
+          </li>
 
-        <li>
-          <img src="img/1x1.gif" data-original="img/slideshow/1080/grey09.jpg">
-        </li>
+          <li>
+            <img src="img/1x1.gif" data-original="img/slideshow/1080/grey08.jpg">
+          </li>
 
-        <li>
-          <img src="img/1x1.gif" data-original="img/slideshow/1080/grey10.jpg">
-        </li>
+          <li>
+            <img src="img/1x1.gif" data-original="img/slideshow/1080/grey09.jpg">
+          </li>
 
-        <li>
-          <img src="img/1x1.gif" data-original="img/slideshow/1080/grey11.jpg">
-        </li>
+          <li>
+            <img src="img/1x1.gif" data-original="img/slideshow/1080/grey10.jpg">
+          </li>
 
-        <li>
-          <img src="img/1x1.gif" data-original="img/slideshow/1080/grey12.jpg">
-        </li>
+          <li>
+            <img src="img/1x1.gif" data-original="img/slideshow/1080/grey11.jpg">
+          </li>
 
-        <li>
-          <img src="img/1x1.gif" data-original="img/slideshow/1080/grey13.jpg">
-        </li>
+          <li>
+            <img src="img/1x1.gif" data-original="img/slideshow/1080/grey12.jpg">
+          </li>
 
-        <li>
-          <img src="img/1x1.gif" data-original="img/slideshow/1080/grey14.jpg">
-        </li>
+          <li>
+            <img src="img/1x1.gif" data-original="img/slideshow/1080/grey13.jpg">
+          </li>
 
-        <li>
-          <img src="img/1x1.gif" data-original="img/slideshow/1080/grey15.jpg">
-        </li>
+          <li>
+            <img src="img/1x1.gif" data-original="img/slideshow/1080/grey14.jpg">
+          </li>
 
-        <li>
-          <img src="img/1x1.gif" data-original="img/slideshow/1080/grey16.jpg">
-        </li>
+          <li>
+            <img src="img/1x1.gif" data-original="img/slideshow/1080/grey15.jpg">
+          </li>
 
-      </ul>
+          <li>
+            <img src="img/1x1.gif" data-original="img/slideshow/1080/grey16.jpg">
+          </li>
+
+        </ul>
+
+      </div>
+      <!-- end demo 1 slideshow -->
+
+      <!-- demo 1 html sample -->
+      <pre class="language-markup">
+        <code class="language-markup">
+&lt;div class=&quot;flexslider&quot;&gt;
+  &lt;ul class=&quot;slides&quot;&gt;
+    &lt;li&gt;
+      &lt;img src=&quot;img/1x1.gif&quot; data-original=&quot;img/slideshow/1080/grey01.jpg&quot;&gt;
+    &lt;/li&gt;
+    ...
+    &lt;li&gt;
+      &lt;img src=&quot;img/1x1.gif&quot; data-original=&quot;img/slideshow/1080/grey16.jpg&quot;&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;
+        </code>
+      </pre>
+      <!-- end demo 1 html sample -->
+
+      <!-- demo 1 js sample -->
+      <pre class="language-javascript">
+        <code class="language-javascript">
+$('#flexloader-demo-1-slideshow').flexslider({
+  namespace: "flexloader-demo-1-",
+  animation: "slide",
+  prevText: "prev",
+  nextText: "next",
+  keyboard: false,
+  slideshowSpeed: 100000,
+  animationSpeed: 300,
+  start: function(slider) {
+    GLOBAL.flexslider_lazyloader.load_adjacent_slides(slider);
+  },
+  after: function(slider) {
+    GLOBAL.flexslider_lazyloader.load_adjacent_slides(slider);
+  }
+});
+        </code>
+      </pre>
+      <!-- end demo 1 js sample -->
 
     </div>
-    <!-- end demo 1 slideshow -->
+    <!-- end demo 1 -->
 
     <!-- demo 2 slideshow -->
     <div id="flexloader-demo-2-slideshow" class="flexslider flexloader-demo-2-slideshow">
 
-      <h4>Slide Animation - w/ Picturefill</h4>
+      <h4>Flexslider + Flexloader + Picturefill</h4>
 
       <ul class="slides">
 
@@ -196,12 +245,15 @@
   </div>
   <!-- end container -->
 
+  <!-- js -->
   <script src="bower_components/jquery/dist/jquery.min.js"></script>
   <script src="bower_components/flexslider/jquery.flexslider.js"></script>
   <script src="bower_components/picturefill/picturefill.js"></script>
+  <script src="bower_components/prism/prism.js"></script>
   <script src="js/site/global_object.js"></script>
   <script src="js/site/flexslider_lazyloader.js"></script>
   <script src="js/site/flexslider_init.js"></script>
+  <!-- end js -->
 
 </body>
 </html>
