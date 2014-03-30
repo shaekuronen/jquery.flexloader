@@ -48,6 +48,25 @@
     });
     // end demo 3 slideshow
 
+
+
+    // demo 4 carousel
+    $('#flexloader-demo-4-carousel').flexslider({
+      namespace: "flexloader-demo-4-",
+      animation: "slide",
+      controlNav: false,
+      itemWidth: 270,
+      itemMargin: 0,
+      prevText: "prev",
+      nextText: "next",
+      keyboard: false,
+      slideshowSpeed: 100000,
+      animationSpeed: 600,
+      animationLoop: false,
+      move: 2
+    });
+    // end demo 4 carousel
+
   });
 
 }(jQuery));
