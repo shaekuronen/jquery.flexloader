@@ -163,7 +163,31 @@ GLOBAL.flexslider_lazyloader = {
     // NO PICTUREFILL LOAD CLONED SLIDES
     load_cloned_slides = function() {
 
+      if ( $(slider).find('.clone').length > 0 ) {
 
+        // get the cloned slides
+        $(slider).find('.clone').each(function() {
+
+          var $clone_slide_image = $(this).find('img'),
+              current_src,
+              current_data_original;
+
+          // get this slide's picturefill element and get the value of it's first span data-src
+          current_src = $clone_slide_image.attr('src');
+
+          current_data_original = $clone_slide_image.attr('data-original');
+
+          // if there is a data-original attribute and it has not already been loaded into src
+          if ( current_data_original !== 'undefined' && current_src !== current_data_original ) {
+
+            // load data-original into img src
+            $clone_slide_image.attr('src', current_data_original);
+
+          }
+
+        });
+
+      }
 
     };
     // END NO PICTUREFILL LOAD CLONED SLIDES
@@ -280,6 +304,9 @@ GLOBAL.flexslider_lazyloader = {
 
       // load the slides
       load_slides(slide_ids);
+
+      // load any cloned slides
+      load_cloned_slides();
 
     }
 
