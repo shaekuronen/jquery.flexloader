@@ -40,12 +40,10 @@
       slideshowSpeed: 100000,
       animationSpeed: 300,
       start: function(slider) {
-        console.log('demo 3 start event');
-        GLOBAL.flexslider_lazyloader.load_adjacent_slides(slider);
+        GLOBAL.flexslider_lazyloader.load_adjacent_slides(slider, { 'picturefill': true });
       },
       after: function(slider) {
-        console.log('demo 3 after animate event');
-        GLOBAL.flexslider_lazyloader.load_adjacent_slides(slider);
+        GLOBAL.flexslider_lazyloader.load_adjacent_slides(slider, { 'picturefill': true });
       }
     });
     // end demo 3 slideshow
