@@ -851,6 +851,8 @@ $('#flexloader-demo-4-carousel').flexslider({
   controlNav: false,
   itemWidth: 270,
   itemMargin: 0,
+  minItems: 4,
+  maxItems: 4,
   prevText: "prev",
   nextText: "next",
   keyboard: false,
@@ -952,11 +954,12 @@ $('#flexloader-demo-4-carousel').flexslider({
       <pre class="language-javascript">
         <code class="language-javascript">
 $('#flexloader-demo-5-carousel').flexslider({
-  namespace: "flexloader-demo-5-",
   animation: "slide",
   controlNav: false,
   itemWidth: 270,
   itemMargin: 0,
+  minItems: 4,
+  maxItems: 4,
   prevText: "prev",
   nextText: "next",
   keyboard: false,
@@ -1485,13 +1488,21 @@ $('#flexloader-demo-6-carousel').flexslider({
   controlNav: false,
   itemWidth: 270,
   itemMargin: 0,
+  minItems: 4,
+  maxItems: 4,
   prevText: "prev",
   nextText: "next",
   keyboard: false,
   slideshowSpeed: 100000,
   animationSpeed: 600,
   animationLoop: false,
-  move: 2
+  move: 2,
+  start: function(slider) {
+    GLOBAL.flexslider_lazyloader.load_adjacent_slides(slider, { 'picturefill': true });
+  },
+  after: function(slider) {
+    GLOBAL.flexslider_lazyloader.load_adjacent_slides(slider, { 'picturefill': true });
+  }
 });
         </code>
       </pre>
