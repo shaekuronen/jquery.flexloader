@@ -79,6 +79,33 @@ module.exports = function(grunt) {
           src: ['img/slideshow/1080/*.jpg'],
           custom_dest: 'img/slideshow/{%= width %}/'
         }]
+      },
+      carousel_slides: {
+        options: {
+          sizes: [
+            {
+              width: 90,
+              height: 90
+            },
+            {
+              width: 135,
+              height: 136
+            },
+            {
+              width: 180,
+              height: 180
+            },
+            {
+              width: 225,
+              height: 225
+            }
+          ]
+        },
+        files: [{
+          expand: true,
+          src: ['img/carousel/270/*.jpg'],
+          custom_dest: 'img/carousel/{%= width %}/'
+        }]
       }
     }
 
@@ -101,5 +128,9 @@ module.exports = function(grunt) {
 	grunt.registerTask('resize-slideshow-slides', [
 		'responsive_images:slideshow_slides'
 	]);
+
+  grunt.registerTask('resize-carousel-slides', [
+    'responsive_images:carousel_slides'
+  ]);
 
 };
