@@ -66,19 +66,22 @@ ol li {
   transition: all .3s ease;
 }
 [class*="-direction-nav"] [class*="-prev"] {
-  left: -50px;
+  opacity: 0.4;
+  left: 10px;
 }
 [class*="-direction-nav"] [class*="-next"] {
-  right: -50px;
+  opacity: 0.4;
+  right: 10px;
   text-align: right;
 }
 .flexslider:hover [class*="-prev"] {
-  opacity: 0.7; left: 10px;
+  opacity: 0.7;
 }
 .flexslider:hover [class*="-next"] {
-  opacity: 0.7; right: 10px;
+  opacity: 0.7;
 }
-.flexslider:hover [class*="-next"]:hover, .flexslider:hover [class*="-prev"]:hover {
+.flexslider:hover [class*="-next"]:hover,
+.flexslider:hover [class*="-prev"]:hover {
   opacity: 1;
 }
 [class*="-direction-nav"] [class*="-disabled"] {
