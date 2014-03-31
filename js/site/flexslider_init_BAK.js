@@ -22,10 +22,10 @@
       slideshowSpeed: 100000,
       animationSpeed: 300,
       start: function(slider) {
-        $(slider).flexloader(slider);
+        GLOBAL.flexslider_lazyloader.load_adjacent_slides(slider);
       },
       after: function(slider) {
-        $(slider).flexloader(slider);
+        GLOBAL.flexslider_lazyloader.load_adjacent_slides(slider);
       }
     });
     // end demo 2 slideshow
@@ -40,10 +40,10 @@
       slideshowSpeed: 100000,
       animationSpeed: 300,
       start: function(slider) {
-        $(slider).flexloader(slider, { 'picturefill': true });
+        GLOBAL.flexslider_lazyloader.load_adjacent_slides(slider, { 'picturefill': true });
       },
       after: function(slider) {
-        $(slider).flexloader(slider, { 'picturefill': true });
+        GLOBAL.flexslider_lazyloader.load_adjacent_slides(slider, { 'picturefill': true });
       }
     });
     // end demo 3 slideshow
@@ -86,10 +86,10 @@
       animationLoop: false,
       move: 2,
       start: function(slider) {
-        $(slider).flexloader(slider);
+        GLOBAL.flexslider_lazyloader.load_adjacent_slides(slider);
       },
       after: function(slider) {
-        $(slider).flexloader(slider);
+        GLOBAL.flexslider_lazyloader.load_adjacent_slides(slider);
       }
     });
     // end demo 5 carousel
@@ -111,10 +111,10 @@
       animationLoop: false,
       move: 2,
       start: function(slider) {
-        $(slider).flexloader(slider, { 'picturefill': true });
+        GLOBAL.flexslider_lazyloader.load_adjacent_slides(slider, { 'picturefill': true });
       },
       after: function(slider) {
-        $(slider).flexloader(slider, { 'picturefill': true });
+        GLOBAL.flexslider_lazyloader.load_adjacent_slides(slider, { 'picturefill': true });
       }
     });
     // end demo 6 carousel
