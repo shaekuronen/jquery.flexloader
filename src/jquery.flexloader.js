@@ -1,23 +1,16 @@
 ;(function($) {
 
-	$.fn.flexloader = function(slider, options) {
+	$.fn.flexloader = function(flexslider, options) {
+
+		var Flexloader;
 
 		// constructor
-		function Flexloader(instance, slider, options) {
+		function Flexloader(domSlider, flexslider, options) {
 
+			// domSlider is the HTML Dom Element of the slider
 
-function print_object(obj) {
-
-  var output = '';
-  for(var property in obj) {
-    output += property + ': ' + obj[property]+'; \n';
-  }
-  console.log(output);
-
-}
-console.log('inside constructor this is ' + print_object(this));
-
-			this.slider = slider;
+			this.flexslider = flexslider;
+			this.domSlider = domSlider;
 			this.current_slide = 0;
 			this.next_slide = 0;
 			this.prev_slide = 0;
@@ -25,36 +18,23 @@ console.log('inside constructor this is ' + print_object(this));
 			this.visible_slides = 0;
 			this.offset = 0;
 			this.slide_ids = [];
-			this.get_current_slides;
-			this.get_next_slides;
-			this.get_prev_slides;
-			this.calculate_visible_items;
-			this.load_slides;
-			this.load_cloned_slides;
-			this.load_picturefill_slides;
-			this.load_picturefill_cloned_slides;
-			// get a jquery reference to the slides DOM element
-			this.$slides = $(this).find('.slides');
-			this.current_src;
-			this.current_data_original;
+			// get a jquery reference to the slide items (<li>) DOM elements
+			this.$slides = $(this.domSlider).find('.slides li');
 			this.options = $.extend({
 				picturefill: false
 			}, options);
 
 			// if the slider.move is defined, set offset to that, otherwise set to 1
-			(typeof this.slider.move !== 'undefined') ? this.offset = this.slider.move : this.offset = 1;
+			(typeof this.flexslider.move !== 'undefined') ? this.offset = this.flexslider.move : this.offset = 1;
 
-			// if options was passed as an argument, define local options as that, otherwise set options to object
-			// (typeof _options !== 'undefined') ? options = _options : options = {};
+			this.current_slide = this.flexslider.currentSlide;
 
-			this.current_slide = this.slider.currentSlide;
+			this.last_slide = this.flexslider.last;
 
-			this.last_slide = this.slider.last;
-
-			// if slider.visible is defined, calculate the visible items, otherwise set visible_slides to 0
-			// don't forget, slider.visible is zero indexed and is the quantity of visible slides
-			// so if there are 6 visible slides in the slideshow, slider.visible will be 5
-			(typeof this.slider.visible !== 'undefined') ? this.visible_slides = this.calculate_visible_items() : this.visible_slides = 0;
+			// if flexslider.visible is defined, calculate the visible items, otherwise set visible_slides to 0
+			// don't forget, flexslider.visible is zero indexed and is the quantity of visible slides
+			// so if there are 6 visible slides in the slideshow, flexslider.visible will be 5
+			(typeof this.flexslider.visible !== 'undefined') ? this.visible_slides = this.calculate_visible_items() : this.visible_slides = 0;
 
 			// these functions add slides to the slide_ids array
 			this.get_current_slides();
@@ -71,22 +51,24 @@ console.log('inside constructor this is ' + print_object(this));
 
 			init: function() {
 
+				var _this = this;
+
 				// if this slideshow implements picturefill
 				if (this.options.picturefill === true) {
 
 				  // load the slides
-				  this.load_picturefill_slides(this.slide_ids);
+				  _this.load_picturefill_slides(this.slide_ids);
 
 				  // load any cloned slides
-				  this.load_picturefill_cloned_slides();
+				  _this.load_picturefill_cloned_slides();
 
 				} else {
 
 				  // load the slides
-				  this.load_slides(this.slide_ids);
+				  _this.load_slides(this.slide_ids);
 
 				  // load any cloned slides
-				  this.load_cloned_slides();
+				  _this.load_cloned_slides();
 
 				}
 
@@ -106,8 +88,8 @@ console.log('inside constructor this is ' + print_object(this));
 	      var slider_width,
 	          item_width;
 
-	      slider_width = (slider.viewport===undefined) ? slider.width() : slider.viewport.width();
-	      item_width = slider.vars.itemWidth + slider.vars.itemMargin;
+	      slider_width = (this.flexslider.viewport===undefined) ? this.flexslider.width() : this.flexslider.viewport.width();
+	      item_width = this.flexslider.vars.itemWidth + this.flexslider.vars.itemMargin;
 
 	      return Math.floor(slider_width / item_width);
 
@@ -185,12 +167,14 @@ console.log('inside constructor this is ' + print_object(this));
 	    // NO PICTUREFILL LOAD SLIDES
 	    load_slides: function(slides) {
 
+	    	var _this = this;
+
 	      $(slides).each(function(slide) {
 
 	        var slide_id = slides[slide],
 	            current_src,
 	            current_data_original,
-	            $slide = $(this.$slides[slide_id]);
+	            $slide = $(_this.$slides[slide_id]);
 
 	        current_src = $slide.find('img').attr('src');
 	        current_data_original = $slide.find('img').attr('data-original');
@@ -210,10 +194,10 @@ console.log('inside constructor this is ' + print_object(this));
 	    // NO PICTUREFILL LOAD CLONED SLIDES
 	    load_cloned_slides: function() {
 
-	      if ( $(slider).find('.clone').length > 0 ) {
+	      if ( $(this.domSlider).find('.clone').length > 0 ) {
 
 	        // get the cloned slides
-	        $(slider).find('.clone').each(function() {
+	        $(this.domSlider).find('.clone').each(function() {
 
 	          var $clone_slide_image = $(this).find('img'),
 	              current_src,
@@ -242,16 +226,18 @@ console.log('inside constructor this is ' + print_object(this));
 	    // PICTUREFILL LOAD SLIDES
 	    load_picturefill_slides: function(_slides) {
 
+	    	var _this = this;
+
 	      $(_slides).each(function(_slide) {
 
 	        var slide_id = _slides[_slide],
 	            picturefill_container,
 	            current_data_src,
 	            current_data_original,
-	            $slide = $(this.$slides[slide_id]);
+	            $slide = $(_this.$slides[slide_id]);
 
 	        // get the jquery object for this slide and find an element with attribute data-picture
-	        picturefill_container = $(this.$slides[slide_id]).find('[data-picture]');
+	        picturefill_container = $(_this.$slides[slide_id]).find('[data-picture]');
 
 	        // get this slide's picturefill element and get the value of it's first span data-src
 	        current_data_src = $(picturefill_container).find('span').attr('data-src');
@@ -289,10 +275,10 @@ console.log('inside constructor this is ' + print_object(this));
 	    // PICTUREFILL LOAD CLONED SLIDES
 	    load_picturefill_cloned_slides: function() {
 
-	      if ( $(slider).find('.clone').length > 0 ) {
+	      if ( $(this.domSlider).find('.clone').length > 0 ) {
 
 	        // get the cloned slides
-	        $(slider).find('.clone').each(function() {
+	        $(this.domSlider).find('.clone').each(function() {
 
 	          var $clone_slide = $(this),
 	              picturefill_container,
@@ -342,7 +328,7 @@ console.log('inside constructor this is ' + print_object(this));
 
     return this.each(function() {
 
-    	new Flexloader(this, slider, options);
+    	new Flexloader(this, flexslider, options);
 
       // if ( !$.data( this, "plugin_flexloader" ) ) {
       //   console.log('IF HAPPENED');
