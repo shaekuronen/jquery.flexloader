@@ -107,6 +107,8 @@
 	        this.slide_ids.push(i);
 	      }
 
+				console.log('after get_current_slides slide_ids is ' + this.slide_ids);
+
 	    },
 	    // end get the currently visible slides
 
@@ -129,6 +131,8 @@
 	        }
 
 	      }
+
+			console.log('after get_next_slides slide_ids is ' + this.slide_ids);
 
 	    },
 	    // end get the next slides
@@ -158,6 +162,7 @@
 	        }
 
 	      }
+			console.log('after get_prev_slides slide_ids is ' + this.slide_ids);
 
 	    },
 	    // end get the prev slides
@@ -167,14 +172,21 @@
 	    // NO PICTUREFILL LOAD SLIDES
 	    load_slides: function(slides) {
 
+	    	console.log('in load_slides slides are ' + slides);
+
 	    	var _this = this;
 
 	      $(slides).each(function(slide) {
+
+	      	console.log('the current slide id is ' + slides[slide]);
 
 	        var slide_id = slides[slide],
 	            current_src,
 	            current_data_original,
 	            $slide = $(_this.$slides[slide_id]);
+
+	            console.log('the current _this.$slides[' + slide_id + '] is ' + Object.keys(_this.$slides[slide_id]));
+	            console.log('the current $slide is ' + Object.keys($slide));
 
 	        current_src = $slide.find('img').attr('src');
 	        current_data_original = $slide.find('img').attr('data-original');
