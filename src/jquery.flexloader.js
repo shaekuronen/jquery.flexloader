@@ -1,11 +1,11 @@
 ;(function($) {
 
-	$.fn.flexloader = function(flexslider, options) {
+	$.flexloader = function(flexslider, options) {
 
 		var Flexloader;
 
 		// constructor
-		function Flexloader(domSlider, flexslider, options) {
+		function Flexloader(flexslider, options) {
 
 			this.flexslider = flexslider;
 			this.current_slide = 0;
@@ -324,18 +324,20 @@
 		};
 		// end plugin prototype methods
 
-    return this.each(function() {
+    return new Flexloader(flexslider, options);
 
-    	new Flexloader(this, flexslider, options);
+    // return this.each(function() {
 
-      // if ( !$.data( this, "plugin_flexloader" ) ) {
-      //   console.log('IF HAPPENED');
-      //   $.data( this, "plugin_flexloader", new Flexloader(this, options) );
-      // } else {
-      //   console.log('ELSE HAPPENED');
-      // }
+    // 	new Flexloader(this, flexslider, options);
 
-    });
+    //   // if ( !$.data( this, "plugin_flexloader" ) ) {
+    //   //   console.log('IF HAPPENED');
+    //   //   $.data( this, "plugin_flexloader", new Flexloader(this, options) );
+    //   // } else {
+    //   //   console.log('ELSE HAPPENED');
+    //   // }
+
+    // });
 
   };
 
