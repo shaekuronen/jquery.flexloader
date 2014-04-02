@@ -8,6 +8,8 @@
 		function Flexloader(domSlider, flexslider, options) {
 
 			// domSlider is the HTML Dom Element of the slider
+			// domSlider includes any cloned elements
+			// flexslider.slides does not include any cloned elements
 
 			this.flexslider = flexslider;
 			this.domSlider = domSlider;
@@ -19,7 +21,8 @@
 			this.offset = 0;
 			this.slide_ids = [];
 			// get a jquery reference to the slide items (<li>) DOM elements
-			this.$slides = $(this.domSlider).find('.slides li');
+			// this.$slides = $(this.domSlider).find('.slides li');
+			this.$slides = $(this.flexslider.slides);
 			this.options = $.extend({
 				picturefill: false
 			}, options);
@@ -107,8 +110,6 @@
 	        this.slide_ids.push(i);
 	      }
 
-				console.log('after get_current_slides slide_ids is ' + this.slide_ids);
-
 	    },
 	    // end get the currently visible slides
 
@@ -132,37 +133,59 @@
 
 	      }
 
-			console.log('after get_next_slides slide_ids is ' + this.slide_ids);
-
 	    },
 	    // end get the next slides
 
 	    // get the prev slides
 	    get_prev_slides: function() {
 
-	      var current_first_slide = this.current_slide * this.offset,
-	          future_first_slide = current_first_slide - this.offset;
-
 	      // if this is the first slide
-	      if (current_first_slide <= 0) {
+	      if (this.current_slide === 0) {
 
-	        // calculate the last slides
+	        // calculate the last slides (or last slide if not a carousel)
 	        var adjusted_last_slide = (this.last_slide * this.offset) + this.visible_slides,
 	            future_last_slide = adjusted_last_slide + this.offset;
 
 	        // add the last slides
-	        for (var i = future_first_slide; i < current_first_slide; i++) {
+	        for (var i = adjusted_last_slide; i < future_last_slide; i++) {
 	          this.slide_ids.push(i);
 	        }
 
+	      // if this is any slide except the first slide
 	      } else {
+
+		      var current_first_slide = this.current_slide * this.offset,
+		          future_first_slide = current_first_slide - this.offset;
 
 	        for (var i = future_first_slide; i < current_first_slide; i++) {
 	          this.slide_ids.push(i);
 	        }
 
 	      }
-			console.log('after get_prev_slides slide_ids is ' + this.slide_ids);
+
+	      // // if this is the first slide
+	      // if (current_first_slide <= 0) {
+
+	      //   // calculate the last slides
+	      //   var adjusted_last_slide = (this.last_slide * this.offset) + this.visible_slides,
+	      //       future_last_slide = adjusted_last_slide + this.offset;
+
+	      //       console.log('adjusted_last_slide is ' + adjusted_last_slide);
+	      //       console.log('future_first_slide is ' + future_first_slide);
+
+	      //   // add the last slides
+	      //   for (var i = future_first_slide; i < current_first_slide; i++) {
+	      //     this.slide_ids.push(i);
+	      //   }
+
+	      // // if the current slide is any slide except the first slide
+	      // } else {
+
+	      //   for (var i = future_first_slide; i < current_first_slide; i++) {
+	      //     this.slide_ids.push(i);
+	      //   }
+
+	      // }
 
 	    },
 	    // end get the prev slides
@@ -170,23 +193,16 @@
 	    // END GET THE IDS OF SLIDES TO LOAD
 
 	    // NO PICTUREFILL LOAD SLIDES
-	    load_slides: function(slides) {
-
-	    	console.log('in load_slides slides are ' + slides);
+	    load_slides: function(_slides_ids) {
 
 	    	var _this = this;
 
-	      $(slides).each(function(slide) {
+	      $(_slides_ids).each(function(index) {
 
-	      	console.log('the current slide id is ' + slides[slide]);
-
-	        var slide_id = slides[slide],
+	        var slide_id = _slides_ids[index],
 	            current_src,
 	            current_data_original,
 	            $slide = $(_this.$slides[slide_id]);
-
-	            console.log('the current _this.$slides[' + slide_id + '] is ' + Object.keys(_this.$slides[slide_id]));
-	            console.log('the current $slide is ' + Object.keys($slide));
 
 	        current_src = $slide.find('img').attr('src');
 	        current_data_original = $slide.find('img').attr('data-original');
