@@ -7,12 +7,7 @@
 		// constructor
 		function Flexloader(domSlider, flexslider, options) {
 
-			// domSlider is the HTML Dom Element of the slider
-			// domSlider includes any cloned elements
-			// flexslider.slides does not include any cloned elements
-
 			this.flexslider = flexslider;
-			this.domSlider = domSlider;
 			this.current_slide = 0;
 			this.next_slide = 0;
 			this.prev_slide = 0;
@@ -20,8 +15,7 @@
 			this.visible_slides = 0;
 			this.offset = 0;
 			this.slide_ids = [];
-			// get a jquery reference to the slide items (<li>) DOM elements
-			// this.$slides = $(this.domSlider).find('.slides li');
+			// flexslider.slides does not include any cloned elements
 			this.$slides = $(this.flexslider.slides);
 			this.options = $.extend({
 				picturefill: false
@@ -163,30 +157,6 @@
 
 	      }
 
-	      // // if this is the first slide
-	      // if (current_first_slide <= 0) {
-
-	      //   // calculate the last slides
-	      //   var adjusted_last_slide = (this.last_slide * this.offset) + this.visible_slides,
-	      //       future_last_slide = adjusted_last_slide + this.offset;
-
-	      //       console.log('adjusted_last_slide is ' + adjusted_last_slide);
-	      //       console.log('future_first_slide is ' + future_first_slide);
-
-	      //   // add the last slides
-	      //   for (var i = future_first_slide; i < current_first_slide; i++) {
-	      //     this.slide_ids.push(i);
-	      //   }
-
-	      // // if the current slide is any slide except the first slide
-	      // } else {
-
-	      //   for (var i = future_first_slide; i < current_first_slide; i++) {
-	      //     this.slide_ids.push(i);
-	      //   }
-
-	      // }
-
 	    },
 	    // end get the prev slides
 
@@ -222,10 +192,10 @@
 	    // NO PICTUREFILL LOAD CLONED SLIDES
 	    load_cloned_slides: function() {
 
-	      if ( $(this.domSlider).find('.clone').length > 0 ) {
+	      	if ( $(this.flexslider).find('.clone').length > 0 ) {
 
 	        // get the cloned slides
-	        $(this.domSlider).find('.clone').each(function() {
+	        	$(this.flexslider).find('.clone').each(function() {
 
 	          var $clone_slide_image = $(this).find('img'),
 	              current_src,
@@ -303,10 +273,10 @@
 	    // PICTUREFILL LOAD CLONED SLIDES
 	    load_picturefill_cloned_slides: function() {
 
-	      if ( $(this.domSlider).find('.clone').length > 0 ) {
+	      if ( $(this.flexslider).find('.clone').length > 0 ) {
 
 	        // get the cloned slides
-	        $(this.domSlider).find('.clone').each(function() {
+	        $(this.flexslider).find('.clone').each(function() {
 
 	          var $clone_slide = $(this),
 	              picturefill_container,
