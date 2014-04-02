@@ -247,10 +247,10 @@ $('#flexloader-demo-2-slideshow').flexslider({
   slideshowSpeed: 100000,
   animationSpeed: 300,
   start: function(slider) {
-    GLOBAL.flexslider_lazyloader.load_adjacent_slides(slider);
+    $.flexloader(slider);
   },
   after: function(slider) {
-    GLOBAL.flexslider_lazyloader.load_adjacent_slides(slider);
+    $.flexloader(slider);
   }
 });
         </code>
@@ -747,10 +747,10 @@ $('#flexloader-demo-3-slideshow').flexslider({
   slideshowSpeed: 100000,
   animationSpeed: 300,
   start: function(slider) {
-    GLOBAL.flexslider_lazyloader.load_adjacent_slides(slider, { 'picturefill': true });
+    $.flexloader(slider, { 'picturefill': true });
   },
   after: function(slider) {
-    GLOBAL.flexslider_lazyloader.load_adjacent_slides(slider, { 'picturefill': true });
+    $.flexloader(slider, { 'picturefill': true });
   }
 });
         </code>
@@ -954,6 +954,7 @@ $('#flexloader-demo-4-carousel').flexslider({
       <pre class="language-javascript">
         <code class="language-javascript">
 $('#flexloader-demo-5-carousel').flexslider({
+  namespace: "flexloader-demo-5-",
   animation: "slide",
   controlNav: false,
   itemWidth: 270,
@@ -968,10 +969,10 @@ $('#flexloader-demo-5-carousel').flexslider({
   animationLoop: false,
   move: 2,
   start: function(slider) {
-    GLOBAL.flexslider_lazyloader.load_adjacent_slides(slider);
+    $.flexloader(slider);
   },
   after: function(slider) {
-    GLOBAL.flexslider_lazyloader.load_adjacent_slides(slider);
+    $.flexloader(slider);
   }
 });
         </code>
@@ -1498,10 +1499,10 @@ $('#flexloader-demo-6-carousel').flexslider({
   animationLoop: false,
   move: 2,
   start: function(slider) {
-    GLOBAL.flexslider_lazyloader.load_adjacent_slides(slider, { 'picturefill': true });
+    $.flexloader(slider, { 'picturefill': true });
   },
   after: function(slider) {
-    GLOBAL.flexslider_lazyloader.load_adjacent_slides(slider, { 'picturefill': true });
+    $.flexloader(slider, { 'picturefill': true });
   }
 });
         </code>
