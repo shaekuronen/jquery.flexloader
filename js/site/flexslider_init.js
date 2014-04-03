@@ -119,6 +119,24 @@
     });
     // end demo 6 carousel
 
+    // demo 7 slideshow
+    $('#flexloader-demo-7-slideshow').flexslider({
+      namespace: "flexloader-demo-7-",
+      animation: "slide",
+      prevText: "prev",
+      nextText: "next",
+      keyboard: false,
+      slideshowSpeed: 100000,
+      animationSpeed: 300,
+      start: function(slider) {
+        $.flexloader(slider, { 'background_images': true });
+      },
+      after: function(slider) {
+        $.flexloader(slider, { 'background_images': true });
+      }
+    });
+    // end demo 7 slideshow
+
   });
 
 }(jQuery));

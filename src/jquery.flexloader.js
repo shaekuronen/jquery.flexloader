@@ -61,6 +61,15 @@
 				  // load any cloned slides
 				  _this.load_picturefill_cloned_slides();
 
+		    // if this slideshow has background images
+		    } else if (this.options.background_images === true) {
+
+		      // load slides with background images
+		      _this.load_background_image_slides(this.slide_ids);
+
+		      // load any cloned slides
+		      _this.load_background_image_clone_slides();
+
 				} else {
 
 				  // load the slides
@@ -321,41 +330,45 @@
 
 	      }
 
-	    }
+	    },
 	    // END PICTUREFILL LOAD CLONED SLIDES
 
-    // LOAD SLIDES WITH BACKGROUND IMAGES
-    load_background_image_slides: function(_slides_ids) {
+	    // LOAD SLIDES WITH BACKGROUND IMAGES
+	    load_background_image_slides: function(_slides_ids) {
 
-    	// for each slide id in the slide_ids array
-      $(_slides_ids).each(function(index, slide_id) {
+	    	var _this = this;
 
-      	// get the slide and add load the image by adding the background image loaded class
-        $(this.$slides[slide_id]).addClass(this.options.class_name);
+	    	// for each slide id in the slide_ids array
+	      $(_slides_ids).each(function(index, _slide_id) {
 
-      });
+	      	// get the slide and add load the image by adding the background image loaded class
+	        $(_this.$slides[_slide_id]).addClass(_this.options.class_name);
 
-    },
-    // END LOAD SLIDES WITH BACKGROUND IMAGES
+	      });
 
-    // LOAD CLONE SLIDES WITH BACKGROUND IMAGES
-    load_background_image_clone_slides: function() {
+	    },
+	    // END LOAD SLIDES WITH BACKGROUND IMAGES
 
-      // if the slider has cloned slides
-      if ( $(this.flexslider).find('.clone').length > 0 ) {
+	    // LOAD CLONE SLIDES WITH BACKGROUND IMAGES
+	    load_background_image_clone_slides: function() {
 
-        // get the cloned slides
-        $(this.flexslider).find('.clone').each(function(index, slide) {
+	    	var _this = this;
 
-          // for each cloned slide add class to load the background image
-          $(slide).addClass(this.options.class_name);
+	      // if the slider has cloned slides
+	      if ( $(_this.flexslider).find('.clone').length > 0 ) {
 
-        });
+	        // get the cloned slides
+	        $(_this.flexslider).find('.clone').each(function(index, slide) {
 
-      }
+	          // for each cloned slide add class to load the background image
+	          $(slide).addClass(_this.options.class_name);
 
-    };
-    // END LOAD CLONE SLIDES WITH BACKGROUND IMAGES
+	        });
+
+	      }
+
+	    }
+	    // END LOAD CLONE SLIDES WITH BACKGROUND IMAGES
 
 		};
 		// end plugin prototype methods
