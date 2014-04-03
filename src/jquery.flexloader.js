@@ -18,7 +18,9 @@
 			// flexslider.slides does not include any cloned elements
 			this.$slides = $(this.flexslider.slides);
 			this.options = $.extend({
-				picturefill: false
+				picturefill: false,
+				background_images: false,
+				class_name: 'flexloader-background-image-loaded'
 			}, options);
 
 			// if the slider.move is defined, set offset to that, otherwise set to 1
@@ -321,6 +323,39 @@
 
 	    }
 	    // END PICTUREFILL LOAD CLONED SLIDES
+
+    // LOAD SLIDES WITH BACKGROUND IMAGES
+    load_background_image_slides: function(_slides_ids) {
+
+    	// for each slide id in the slide_ids array
+      $(_slides_ids).each(function(index, slide_id) {
+
+      	// get the slide and add load the image by adding the background image loaded class
+        $(this.$slides[slide_id]).addClass(this.options.class_name);
+
+      });
+
+    },
+    // END LOAD SLIDES WITH BACKGROUND IMAGES
+
+    // LOAD CLONE SLIDES WITH BACKGROUND IMAGES
+    load_background_image_clone_slides: function() {
+
+      // if the slider has cloned slides
+      if ( $(this.flexslider).find('.clone').length > 0 ) {
+
+        // get the cloned slides
+        $(this.flexslider).find('.clone').each(function(index, slide) {
+
+          // for each cloned slide add class to load the background image
+          $(slide).addClass(this.options.class_name);
+
+        });
+
+      }
+
+    };
+    // END LOAD CLONE SLIDES WITH BACKGROUND IMAGES
 
 		};
 		// end plugin prototype methods
