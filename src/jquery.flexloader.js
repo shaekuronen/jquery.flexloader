@@ -385,8 +385,6 @@
     }
 		// end wrapper to prevent multiple instances of flexloader
 
-    // return new Flexloader(flexslider, options);
-
   };
 
 }(jQuery));
