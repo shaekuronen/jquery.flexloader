@@ -232,7 +232,8 @@
 	            picturefill_container,
 	            current_data_src,
 	            current_data_original,
-	            $slide = $(_this.$slides[slide_id]);
+	            $slide = $(_this.$slides[slide_id]),
+	            $noscript;
 
 	        // get the jquery object for this slide and find an element with attribute data-picture
 	        picturefill_container = $(_this.$slides[slide_id]).find('[data-picture]');
