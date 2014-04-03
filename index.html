@@ -1880,11 +1880,39 @@ $('#flexloader-demo-6-carousel').flexslider({
       <!-- end demo 7 slideshow -->
 
       <!-- demo 7 html sample -->
-
+      <pre class="language-markup">
+        <code class="language-markup">
+&lt;div class=&quot;flexslider&quot;&gt;
+  &lt;ul class=&quot;slides&quot;&gt;
+    &lt;li class=&quot;slide&quot;&gt;&lt;/li&gt;
+    ...
+    &lt;li class=&quot;slide&quot;&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;
+        </code>
+      </pre>
       <!-- end demo 7 html sample -->
 
       <!-- demo 7 js sample -->
-
+      <pre class="language-javascript">
+        <code class="language-javascript">
+$('#flexloader-demo-7-slideshow').flexslider({
+  namespace: "flexloader-demo-7-",
+  animation: "slide",
+  prevText: "prev",
+  nextText: "next",
+  keyboard: false,
+  slideshowSpeed: 100000,
+  animationSpeed: 300,
+  start: function(slider) {
+    $.flexloader(slider, { 'background_images': true });
+  },
+  after: function(slider) {
+    $.flexloader(slider, { 'background_images': true });
+  }
+});
+        </code>
+      </pre>
       <!-- end demo 7 js sample -->
 
     <!-- end demo 7 -->
