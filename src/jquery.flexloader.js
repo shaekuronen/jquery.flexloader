@@ -373,20 +373,19 @@
 		};
 		// end plugin prototype methods
 
-    return new Flexloader(flexslider, options);
+		// wrapper to prevent multiple instances of flexloader
+    if ( !$.data( this, "plugin_flexloader" ) ) {
 
-    // return this.each(function() {
+    	// add a data attribute
+      $.data( this, "plugin_flexloader");
 
-    // 	new Flexloader(this, flexslider, options);
+      // create an instance of flexloader
+      return new Flexloader(flexslider, options);
 
-    //   // if ( !$.data( this, "plugin_flexloader" ) ) {
-    //   //   console.log('IF HAPPENED');
-    //   //   $.data( this, "plugin_flexloader", new Flexloader(this, options) );
-    //   // } else {
-    //   //   console.log('ELSE HAPPENED');
-    //   // }
+    }
+		// end wrapper to prevent multiple instances of flexloader
 
-    // });
+    // return new Flexloader(flexslider, options);
 
   };
 
