@@ -50,16 +50,36 @@ with HTML like this
 <div class="flexslider">
   <ul class="slides">
     <li>
-      <span data-picture data-alt="description here">
-          <span data-src="small.jpg"></span>
-          <span data-src="medium.jpg"     data-media="(min-width: 400px)"></span>
-          <span data-src="large.jpg"      data-media="(min-width: 800px)"></span>
-          <span data-src="extralarge.jpg" data-media="(min-width: 1000px)"></span>
-
-          <!-- Fallback content for non-JS browsers. Same img src as the initial, unqualified source element. -->
-          <noscript>
-              <img src="small.jpg" alt="description here">
-          </noscript>
+      <span data-picture data-alt="Description here...">
+        <span
+          data-src="img/1x1.gif"
+          data-original="img/slideshow_flexloader_picturefill/540/grey01.jpg">
+        </span>
+        <span
+          data-src="img/1x1.gif"
+          data-original="img/slideshow_flexloader_picturefill/540/grey01.jpg"
+          data-media="(max-width: 540px)">
+        </span>
+        <span
+          data-src="img/1x1.gif"
+          data-original="img/slideshow_flexloader_picturefill/720/grey01.jpg"
+          data-media="(min-width: 541px) and (max-width: 720px)">
+        </span>
+        <span
+          data-src="img/1x1.gif"
+          data-original="img/slideshow_flexloader_picturefill/900/grey01.jpg"
+          data-media="(min-width: 721px) and (max-width: 900px)">
+        <span
+          data-src="img/1x1.gif"
+          data-original="img/slideshow_flexloader_picturefill/1080/grey01.jpg"
+          data-media="(min-width: 901px)">
+        </span>
+        <!-- Fallback content for non-JS browsers. Same img src as the initial, unqualified source element. -->
+        <noscript>
+          <img
+            src="img/slideshow_flexloader_picturefill/540/grey01.jpg"
+            alt="Description here...">
+        </noscript>
       </span>
     </li>
     ...
