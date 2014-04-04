@@ -3,16 +3,26 @@
   "version": "0.3.0",
   "homepage": "https://github.com/shaekuronen/jquery.flexloader",
   "authors": [
-    "Shae Kuronen <shae.kuronen@gmail.com>"
+    "Shae Kuronen <shae.tml@gmail.com>"
   ],
   "description": "Lazyload Flexslider slides, optionally using Picturefill",
   "license": "MIT",
   "ignore": [
-    "**/.*",
+    ".gitignore",
+    ".jshintrc",
+    "_config.yml",
+    "CONTRIBUTING.md",
+    "Gruntfile.js",
+    "HISTORY.md",
+    "index.html",
+    "src",
     "node_modules",
     "bower_components",
     "test",
-    "tests"
+    "tests",
+    "img",
+    "css"
+
   ],
   "dependencies": {
     "flexslider": "*",
@@ -22,5 +32,13 @@
   },
   "devDependencies": {
     "prism": "gh-pages"
-  }
+  },
+  "keywords": [
+    "jquery",
+    "lazyload",
+    "flexslider",
+    "picturefill",
+    "plugins",
+    "flexloader"
+  ]
 }
