@@ -21,7 +21,8 @@
     "test",
     "tests",
     "img",
-    "css"
+    "css",
+    "js"
 
   ],
   "dependencies": {
