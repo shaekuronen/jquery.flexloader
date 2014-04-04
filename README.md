@@ -23,11 +23,11 @@ The default behavior is to load HTML markup following the Flexslider convention 
 <div class="flexslider">
   <ul class="slides">
     <li>
-      <img src="img/slideshow/01.jpg">
+      <img src="img/1x1.gif" data-original="img/slideshow/01.jpg">
     </li>
     ...
     <li>
-      <img src="img/slideshow/16.jpg">
+      <img src="img/1x1.gif" data-original="img/slideshow/16.jpg">
     </li>
   </ul>
 </div>
@@ -62,6 +62,7 @@ with HTML like this
           </noscript>
       </span>
     </li>
+    ...
   </ul>
 </div>
 ```
@@ -155,11 +156,13 @@ This configuration will add the class 'your-class-name' to each loaded slide, so
   }
 }
 ```
-To further improve loading performance, you can bootstrap slide 1.  This starts downloading the background image for slide 1 earlier and ultimately leads to a quicker window.load event.  To bootstrap the first slide, or any slide, add the loaded slide class, either the default '.flexloader-background-image-loaded' or '.your-custom-class'.  After the window.load event Flexslider will init, fire start event, and download the next and prev slides.
+To further improve loading performance, you can bootstrap the first slide.  This starts downloading the background image earlier and ultimately leads to a quicker window.load event.  To bootstrap the first slide (or any slide) add the loaded slide class, either the default '.flexloader-background-image-loaded' or '.your-custom-class'.  After the window.load event Flexslider will init, fire start event, and download the next and prev slides.
 ```html
 <div class="flexslider">
   <ul class="slides">
     <li class="slide slide-01 flexloader-background-image-loaded"></li>
+    <li class="slide slide-02"></li>
+    <li class="slide slide-03"></li>
     ...
     <li class="slide slide-16"></li>
   </ul>
