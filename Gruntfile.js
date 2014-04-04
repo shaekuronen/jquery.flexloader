@@ -20,8 +20,8 @@ module.exports = function(grunt) {
 		// Concat definitions
 		concat: {
 			dist: {
-				src: ["src/jquery.boilerplate.js"],
-				dest: "dist/jquery.boilerplate.js"
+				src: ["src/jquery.flexloader.js"],
+				dest: "dist/jquery.flexloader.js"
 			},
 			options: {
 				banner: "<%= meta.banner %>"
@@ -30,7 +30,7 @@ module.exports = function(grunt) {
 
 		// Lint definitions
 		jshint: {
-			files: ["src/jquery.boilerplate.js"],
+			files: ["src/jquery.flexloader.js"],
 			options: {
 				jshintrc: ".jshintrc"
 			}
@@ -40,7 +40,7 @@ module.exports = function(grunt) {
 	copy: {
 	  main: {
 	    files: [
-	      {expand: true, src: ['src/jquery.boilerplate.js'], dest: 'dist/jquery.boilerplate.js', filter: 'isFile'}
+	      {expand: true, src: ['src/jquery.flexloader.js'], dest: 'dist/jquery.flexloader.js', filter: 'isFile'}
 	    ]
 	  }
 	},
@@ -48,8 +48,8 @@ module.exports = function(grunt) {
 		// Minify definitions
 		uglify: {
 			my_target: {
-				src: ["dist/jquery.boilerplate.js"],
-				dest: "dist/jquery.boilerplate.min.js"
+				src: ["dist/jquery.flexloader.js"],
+				dest: "dist/jquery.flexloader.min.js"
 			},
 			options: {
 				banner: "<%= meta.banner %>"
