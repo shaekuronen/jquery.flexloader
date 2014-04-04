@@ -4,7 +4,7 @@
   "description": "Lazyload Flexslider slides, optionally using Picturefill",
   "author": "Shae Kuronen",
   "homepage": "https://github.com/shaekuronen/jquery.flexloader/",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "devDependencies": {
     "grunt": "~0.4.4",
     "grunt-cli": "~0.1.7",
