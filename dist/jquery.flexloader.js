@@ -1,5 +1,5 @@
 /*
- *  jQuery Flexloader - v0.0.1
+ *  jQuery Flexloader - v0.3.0
  *  Lazyload Flexslider slides, optionally using Picturefill
  *  http://shaekuronen.github.io/jquery.flexloader
  *
