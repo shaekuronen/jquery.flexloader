@@ -137,6 +137,30 @@
     });
     // end demo 7 slideshow
 
+    // demo 8 slideshow
+    $('#flexloader-demo-8-slideshow').flexslider({
+      namespace: "flexloader-demo-8-",
+      animation: "slide",
+      prevText: "prev",
+      nextText: "next",
+      keyboard: false,
+      slideshowSpeed: 100000,
+      animationSpeed: 300,
+      start: function(slider) {
+        $.flexloader(slider, {
+          'background_images': true,
+          'class_name': 'flexloader-custom-class-background-image-loaded'
+        });
+      },
+      after: function(slider) {
+        $.flexloader(slider, {
+          'background_images': true,
+          'class_name': 'flexloader-custom-class-background-image-loaded'
+        });
+      }
+    });
+    // end demo 8 slideshow
+
   });
 
 }(jQuery));

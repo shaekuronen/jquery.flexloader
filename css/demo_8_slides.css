@@ -1,0 +1,207 @@
+
+.flexloader-demo-8-slide {
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 0;
+  padding-bottom: 50%;
+}
+@media (max-width: 540px) {
+  .flexloader-demo-8-slide-01.flexloader-custom-class-background-image-loaded {
+    background-image: url('../img/slideshow_background_images_custom_class/540/grey01.jpg');
+  }
+  .flexloader-demo-8-slide-02.flexloader-custom-class-background-image-loaded {
+    background-image: url('../img/slideshow_background_images_custom_class/540/grey02.jpg');
+  }
+  .flexloader-demo-8-slide-03.flexloader-custom-class-background-image-loaded {
+    background-image: url('../img/slideshow_background_images_custom_class/540/grey03.jpg');
+  }
+  .flexloader-demo-8-slide-04.flexloader-custom-class-background-image-loaded {
+    background-image: url('../img/slideshow_background_images_custom_class/540/grey04.jpg');
+  }
+  .flexloader-demo-8-slide-05.flexloader-custom-class-background-image-loaded {
+    background-image: url('../img/slideshow_background_images_custom_class/540/grey05.jpg');
+  }
+  .flexloader-demo-8-slide-06.flexloader-custom-class-background-image-loaded {
+    background-image: url('../img/slideshow_background_images_custom_class/540/grey06.jpg');
+  }
+  .flexloader-demo-8-slide-07.flexloader-custom-class-background-image-loaded {
+    background-image: url('../img/slideshow_background_images_custom_class/540/grey07.jpg');
+  }
+  .flexloader-demo-8-slide-08.flexloader-custom-class-background-image-loaded {
+    background-image: url('../img/slideshow_background_images_custom_class/540/grey08.jpg');
+  }
+  .flexloader-demo-8-slide-09.flexloader-custom-class-background-image-loaded {
+    background-image: url('../img/slideshow_background_images_custom_class/540/grey09.jpg');
+  }
+  .flexloader-demo-8-slide-10.flexloader-custom-class-background-image-loaded {
+    background-image: url('../img/slideshow_background_images_custom_class/540/grey10.jpg');
+  }
+  .flexloader-demo-8-slide-11.flexloader-custom-class-background-image-loaded {
+    background-image: url('../img/slideshow_background_images_custom_class/540/grey11.jpg');
+  }
+  .flexloader-demo-8-slide-12.flexloader-custom-class-background-image-loaded {
+    background-image: url('../img/slideshow_background_images_custom_class/540/grey12.jpg');
+  }
+  .flexloader-demo-8-slide-13.flexloader-custom-class-background-image-loaded {
+    background-image: url('../img/slideshow_background_images_custom_class/540/grey13.jpg');
+  }
+  .flexloader-demo-8-slide-14.flexloader-custom-class-background-image-loaded {
+    background-image: url('../img/slideshow_background_images_custom_class/540/grey14.jpg');
+  }
+  .flexloader-demo-8-slide-15.flexloader-custom-class-background-image-loaded {
+    background-image: url('../img/slideshow_background_images_custom_class/540/grey15.jpg');
+  }
+  .flexloader-demo-8-slide-16.flexloader-custom-class-background-image-loaded {
+    background-image: url('../img/slideshow_background_images_custom_class/540/grey16.jpg');
+  }
+}
+@media (min-width: 541px) and (max-width: 720px) {
+  .flexloader-demo-8-slide-01.flexloader-custom-class-background-image-loaded {
+    background-image: url('../img/slideshow_background_images_custom_class/720/grey01.jpg');
+  }
+  .flexloader-demo-8-slide-02.flexloader-custom-class-background-image-loaded {
+    background-image: url('../img/slideshow_background_images_custom_class/720/grey02.jpg');
+  }
+  .flexloader-demo-8-slide-03.flexloader-custom-class-background-image-loaded {
+    background-image: url('../img/slideshow_background_images_custom_class/720/grey03.jpg');
+  }
+  .flexloader-demo-8-slide-04.flexloader-custom-class-background-image-loaded {
+    background-image: url('../img/slideshow_background_images_custom_class/720/grey04.jpg');
+  }
+  .flexloader-demo-8-slide-05.flexloader-custom-class-background-image-loaded {
+    background-image: url('../img/slideshow_background_images_custom_class/720/grey05.jpg');
+  }
+  .flexloader-demo-8-slide-06.flexloader-custom-class-background-image-loaded {
+    background-image: url('../img/slideshow_background_images_custom_class/720/grey06.jpg');
+  }
+  .flexloader-demo-8-slide-07.flexloader-custom-class-background-image-loaded {
+    background-image: url('../img/slideshow_background_images_custom_class/720/grey07.jpg');
+  }
+  .flexloader-demo-8-slide-08.flexloader-custom-class-background-image-loaded {
+    background-image: url('../img/slideshow_background_images_custom_class/720/grey08.jpg');
+  }
+  .flexloader-demo-8-slide-09.flexloader-custom-class-background-image-loaded {
+    background-image: url('../img/slideshow_background_images_custom_class/720/grey09.jpg');
+  }
+  .flexloader-demo-8-slide-10.flexloader-custom-class-background-image-loaded {
+    background-image: url('../img/slideshow_background_images_custom_class/720/grey10.jpg');
+  }
+  .flexloader-demo-8-slide-11.flexloader-custom-class-background-image-loaded {
+    background-image: url('../img/slideshow_background_images_custom_class/720/grey11.jpg');
+  }
+  .flexloader-demo-8-slide-12.flexloader-custom-class-background-image-loaded {
+    background-image: url('../img/slideshow_background_images_custom_class/720/grey12.jpg');
+  }
+  .flexloader-demo-8-slide-13.flexloader-custom-class-background-image-loaded {
+    background-image: url('../img/slideshow_background_images_custom_class/720/grey13.jpg');
+  }
+  .flexloader-demo-8-slide-14.flexloader-custom-class-background-image-loaded {
+    background-image: url('../img/slideshow_background_images_custom_class/720/grey14.jpg');
+  }
+  .flexloader-demo-8-slide-15.flexloader-custom-class-background-image-loaded {
+    background-image: url('../img/slideshow_background_images_custom_class/720/grey15.jpg');
+  }
+  .flexloader-demo-8-slide-16.flexloader-custom-class-background-image-loaded {
+    background-image: url('../img/slideshow_background_images_custom_class/720/grey16.jpg');
+  }
+}
+@media (min-width: 721px) and (max-width: 900px) {
+  .flexloader-demo-8-slide-01.flexloader-custom-class-background-image-loaded {
+    background-image: url('../img/slideshow_background_images_custom_class/900/grey01.jpg');
+  }
+  .flexloader-demo-8-slide-02.flexloader-custom-class-background-image-loaded {
+    background-image: url('../img/slideshow_background_images_custom_class/900/grey02.jpg');
+  }
+  .flexloader-demo-8-slide-03.flexloader-custom-class-background-image-loaded {
+    background-image: url('../img/slideshow_background_images_custom_class/900/grey03.jpg');
+  }
+  .flexloader-demo-8-slide-04.flexloader-custom-class-background-image-loaded {
+    background-image: url('../img/slideshow_background_images_custom_class/900/grey04.jpg');
+  }
+  .flexloader-demo-8-slide-05.flexloader-custom-class-background-image-loaded {
+    background-image: url('../img/slideshow_background_images_custom_class/900/grey05.jpg');
+  }
+  .flexloader-demo-8-slide-06.flexloader-custom-class-background-image-loaded {
+    background-image: url('../img/slideshow_background_images_custom_class/900/grey06.jpg');
+  }
+  .flexloader-demo-8-slide-07.flexloader-custom-class-background-image-loaded {
+    background-image: url('../img/slideshow_background_images_custom_class/900/grey07.jpg');
+  }
+  .flexloader-demo-8-slide-08.flexloader-custom-class-background-image-loaded {
+    background-image: url('../img/slideshow_background_images_custom_class/900/grey08.jpg');
+  }
+  .flexloader-demo-8-slide-09.flexloader-custom-class-background-image-loaded {
+    background-image: url('../img/slideshow_background_images_custom_class/900/grey09.jpg');
+  }
+  .flexloader-demo-8-slide-10.flexloader-custom-class-background-image-loaded {
+    background-image: url('../img/slideshow_background_images_custom_class/900/grey10.jpg');
+  }
+  .flexloader-demo-8-slide-11.flexloader-custom-class-background-image-loaded {
+    background-image: url('../img/slideshow_background_images_custom_class/900/grey11.jpg');
+  }
+  .flexloader-demo-8-slide-12.flexloader-custom-class-background-image-loaded {
+    background-image: url('../img/slideshow_background_images_custom_class/900/grey12.jpg');
+  }
+  .flexloader-demo-8-slide-13.flexloader-custom-class-background-image-loaded {
+    background-image: url('../img/slideshow_background_images_custom_class/900/grey13.jpg');
+  }
+  .flexloader-demo-8-slide-14.flexloader-custom-class-background-image-loaded {
+    background-image: url('../img/slideshow_background_images_custom_class/900/grey14.jpg');
+  }
+  .flexloader-demo-8-slide-15.flexloader-custom-class-background-image-loaded {
+    background-image: url('../img/slideshow_background_images_custom_class/900/grey15.jpg');
+  }
+  .flexloader-demo-8-slide-16.flexloader-custom-class-background-image-loaded {
+    background-image: url('../img/slideshow_background_images_custom_class/900/grey16.jpg');
+  }
+}
+@media (min-width: 901px) {
+  .flexloader-demo-8-slide-01.flexloader-custom-class-background-image-loaded {
+    background-image: url('../img/slideshow_background_images_custom_class/1080/grey01.jpg');
+  }
+  .flexloader-demo-8-slide-02.flexloader-custom-class-background-image-loaded {
+    background-image: url('../img/slideshow_background_images_custom_class/1080/grey02.jpg');
+  }
+  .flexloader-demo-8-slide-03.flexloader-custom-class-background-image-loaded {
+    background-image: url('../img/slideshow_background_images_custom_class/1080/grey03.jpg');
+  }
+  .flexloader-demo-8-slide-04.flexloader-custom-class-background-image-loaded {
+    background-image: url('../img/slideshow_background_images_custom_class/1080/grey04.jpg');
+  }
+  .flexloader-demo-8-slide-05.flexloader-custom-class-background-image-loaded {
+    background-image: url('../img/slideshow_background_images_custom_class/1080/grey05.jpg');
+  }
+  .flexloader-demo-8-slide-06.flexloader-custom-class-background-image-loaded {
+    background-image: url('../img/slideshow_background_images_custom_class/1080/grey06.jpg');
+  }
+  .flexloader-demo-8-slide-07.flexloader-custom-class-background-image-loaded {
+    background-image: url('../img/slideshow_background_images_custom_class/1080/grey07.jpg');
+  }
+  .flexloader-demo-8-slide-08.flexloader-custom-class-background-image-loaded {
+    background-image: url('../img/slideshow_background_images_custom_class/1080/grey08.jpg');
+  }
+  .flexloader-demo-8-slide-09.flexloader-custom-class-background-image-loaded {
+    background-image: url('../img/slideshow_background_images_custom_class/1080/grey09.jpg');
+  }
+  .flexloader-demo-8-slide-10.flexloader-custom-class-background-image-loaded {
+    background-image: url('../img/slideshow_background_images_custom_class/1080/grey10.jpg');
+  }
+  .flexloader-demo-8-slide-11.flexloader-custom-class-background-image-loaded {
+    background-image: url('../img/slideshow_background_images_custom_class/1080/grey11.jpg');
+  }
+  .flexloader-demo-8-slide-12.flexloader-custom-class-background-image-loaded {
+    background-image: url('../img/slideshow_background_images_custom_class/1080/grey12.jpg');
+  }
+  .flexloader-demo-8-slide-13.flexloader-custom-class-background-image-loaded {
+    background-image: url('../img/slideshow_background_images_custom_class/1080/grey13.jpg');
+  }
+  .flexloader-demo-8-slide-14.flexloader-custom-class-background-image-loaded {
+    background-image: url('../img/slideshow_background_images_custom_class/1080/grey14.jpg');
+  }
+  .flexloader-demo-8-slide-15.flexloader-custom-class-background-image-loaded {
+    background-image: url('../img/slideshow_background_images_custom_class/1080/grey15.jpg');
+  }
+  .flexloader-demo-8-slide-16.flexloader-custom-class-background-image-loaded {
+    background-image: url('../img/slideshow_background_images_custom_class/1080/grey16.jpg');
+  }
+}
