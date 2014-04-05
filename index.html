@@ -40,6 +40,239 @@
   <!-- container -->
   <div class="wrapper clearfix">
 
+    <!-- description -->
+    <div class="flexloader-description">
+
+      <h4>Flexloader is a lazyloading solution for Flexslider</h4>
+
+      <p>In a Flexslider slideshow with one slide visible, Flexloader loads the current, next, and prev slide.</p>
+
+      <p>In a Flexslider carousel with multiple slides visible, Flexloader loads the currently visible slides, the next slides, and the prev slides.</p>
+
+      <p>Configuration is easy, you just add $.flexloader to the start and after events in Flexslider init and pass in the slider instance as an argument</p>
+
+      <pre class="language-javascript">
+        <code class="language-javascript">
+$('.flexslider').flexslider({
+  start: function(slider) {
+    $.flexloader(slider);
+  },
+  after: function(slider) {
+    $.flexloader(slider);
+  }
+});
+        </code>
+      </pre>
+
+      <p>The default behavior is to load HTML markup following the Flexslider convention of li > img</p>
+
+      <pre class="language-markup">
+        <code class="language-markup">
+&lt;div class=&quot;flexslider&quot;&gt;
+  &lt;ul class=&quot;slides&quot;&gt;
+    &lt;li&gt;
+      &lt;img src=&quot;img/1x1.gif&quot; data-original=&quot;img/slideshow/01.jpg&quot;&gt;
+    &lt;/li&gt;
+    ...
+    &lt;li&gt;
+      &lt;img src=&quot;img/1x1.gif&quot; data-original=&quot;img/slideshow/16.jpg&quot;&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;
+        </code>
+      </pre>
+
+      <h4>There are two options: Picturefill and background-images.</h4>
+
+      <p>To implement Picturefill, create a Flexslider instance like this</p>
+
+      <pre class="language-javascript">
+        <code class="language-javascript">
+$('.flexslider').flexslider({
+  start: function(slider) {
+    $.flexloader(slider, { 'picturefill': true });
+  },
+  after: function(slider) {
+    $.flexloader(slider, { 'picturefill': true });
+  }
+});
+        </code>
+      </pre>
+
+      <p>with HTML like this</p>
+
+      <pre class="language-markup">
+        <code class="language-markup">
+&lt;div class=&quot;flexslider&quot;&gt;
+  &lt;ul class=&quot;slides&quot;&gt;
+    &lt;li&gt;
+      &lt;span data-picture data-alt=&quot;Description here...&quot;&gt;
+        &lt;span
+          data-src=&quot;img/1x1.gif&quot;
+          data-original=&quot;img/slideshow_flexloader_picturefill/540/grey01.jpg&quot;&gt;
+        &lt;/span&gt;
+        &lt;span
+          data-src=&quot;img/1x1.gif&quot;
+          data-original=&quot;img/slideshow_flexloader_picturefill/540/grey01.jpg&quot;
+          data-media=&quot;(max-width: 540px)&quot;&gt;
+        &lt;/span&gt;
+        &lt;span
+          data-src=&quot;img/1x1.gif&quot;
+          data-original=&quot;img/slideshow_flexloader_picturefill/720/grey01.jpg&quot;
+          data-media=&quot;(min-width: 541px) and (max-width: 720px)&quot;&gt;
+        &lt;/span&gt;
+        &lt;span
+          data-src=&quot;img/1x1.gif&quot;
+          data-original=&quot;img/slideshow_flexloader_picturefill/900/grey01.jpg&quot;
+          data-media=&quot;(min-width: 721px) and (max-width: 900px)&quot;&gt;
+        &lt;span
+          data-src=&quot;img/1x1.gif&quot;
+          data-original=&quot;img/slideshow_flexloader_picturefill/1080/grey01.jpg&quot;
+          data-media=&quot;(min-width: 901px)&quot;&gt;
+        &lt;/span&gt;
+        &lt;!-- Fallback content for non-JS browsers. Same img src as the initial, unqualified source element. --&gt;
+        &lt;noscript&gt;
+          &lt;img
+            src=&quot;img/slideshow_flexloader_picturefill/540/grey01.jpg&quot;
+            alt=&quot;Description here...&quot;&gt;
+        &lt;/noscript&gt;
+      &lt;/span&gt;
+    &lt;/li&gt;
+    ...
+  &lt;/ul&gt;
+&lt;/div&gt;
+        </code>
+      </pre>
+
+      <p>To use background-images instead of img element</p>
+
+      <pre class="language-javascript">
+        <code class="language-javascript">
+$('.flexslider').flexslider({
+  start: function(slider) {
+    $.flexloader(slider, { 'background_images': true });
+  },
+  after: function(slider) {
+    $.flexloader(slider, { 'background_images': true });
+  }
+});
+        </code>
+      </pre>
+
+      <p>with HTML like this</p>
+
+      <pre class="language-markup">
+        <code class="language-markup">
+&lt;div class=&quot;flexslider&quot;&gt;
+  &lt;ul class=&quot;slides&quot;&gt;
+    &lt;li class=&quot;slide slide-01&quot;&gt;&lt;/li&gt;
+    ...
+    &lt;li class=&quot;slide slide-16&quot;&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;
+        </code>
+      </pre>
+
+      <p>and the CSS</p>
+
+      <pre class="language-css">
+        <code class="language-css">
+.slide {
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 0;
+  padding-bottom: 50%;
+}
+@media (max-width: 540px) {
+  .slide-01.flexloader-background-image-loaded {
+    background-image: url('../img/slideshow_background_images/540/grey01.jpg');
+  }
+}
+@media (min-width: 541px) and (max-width: 720px) {
+  .slide-01.flexloader-background-image-loaded {
+    background-image: url('../img/slideshow_background_images/720/grey01.jpg');
+  }
+}
+@media (min-width: 721px) and (max-width: 900px) {
+  .slide-01.flexloader-background-image-loaded {
+    background-image: url('../img/slideshow_background_images/900/grey01.jpg');
+  }
+}
+@media (min-width: 901px) {
+  .slide-01.flexloader-background-image-loaded {
+    background-image: url('../img/slideshow_background_images/1080/grey01.jpg');
+  }
+}
+        </code>
+      </pre>
+
+      <p>Flexloader defaults to adding the class 'flexloader-background-image-loaded' to slides that have been loaded.  If you want to change the default, it's possible to configure.</p>
+
+      <pre class="language-javascript">
+        <code class="language-javascript">
+$('.flexslider').flexslider({
+  start: function(slider) {
+    $.flexloader(slider, { 'background_images': true, 'class_name': 'your-class-name' });
+  },
+  after: function(slider) {
+    $.flexloader(slider, { 'background_images': true, 'class_name': 'your-class-name' });
+  }
+});
+        </code>
+      </pre>
+
+      <p>This configuration will add the class 'your-class-name' to each loaded slide, so you would update your CSS to this...</p>
+
+      <pre class="language-css">
+        <code class="language-css">
+.slide {
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 0;
+  padding-bottom: 50%;
+}
+@media (max-width: 540px) {
+  .slide-01.your-class-name {
+    background-image: url('../img/slideshow_background_images/540/grey01.jpg');
+  }
+}
+@media (min-width: 541px) and (max-width: 720px) {
+  .slide-01.your-class-name {
+    background-image: url('../img/slideshow_background_images/720/grey01.jpg');
+  }
+}
+@media (min-width: 721px) and (max-width: 900px) {
+  .slide-01.your-class-name {
+    background-image: url('../img/slideshow_background_images/900/grey01.jpg');
+  }
+}
+@media (min-width: 901px) {
+  .slide-01.your-class-name {
+    background-image: url('../img/slideshow_background_images/1080/grey01.jpg');
+  }
+}
+        </code>
+      </pre>
+
+      <p>To further improve loading performance, you can bootstrap the first slide.  This starts downloading the background image earlier and ultimately leads to a quicker window.load event.  To bootstrap the first slide (or any slide) add the loaded slide class, either the default 'flexloader-background-image-loaded' or 'your-custom-class'.  After the window.load event Flexslider will init, fire start event, and Flexloader will download the next and prev slides.</p>
+
+      <pre class="language-markup">
+        <code class="language-markup">
+&lt;div class=&quot;flexslider&quot;&gt;
+  &lt;ul class=&quot;slides&quot;&gt;
+    &lt;li class=&quot;slide slide-01 flexloader-background-image-loaded&quot;&gt;&lt;/li&gt;
+    &lt;li class=&quot;slide slide-02&quot;&gt;&lt;/li&gt;
+    &lt;li class=&quot;slide slide-03&quot;&gt;&lt;/li&gt;
+    ...
+    &lt;li class=&quot;slide slide-16&quot;&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;
+        </code>
+      </pre>
+
+    </div>
+    <!-- end description -->
+
     <!-- demo 1 -->
     <div class="flexloader-demo-1">
 
