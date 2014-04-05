@@ -172,20 +172,24 @@ nav a:hover {
     INTERMEDIATE: Menu
    ==================== */
 
+   nav ul {
+    float: right;
+   }
+
     nav a {
-        float: left;
-        width: 27%;
+/*        float: left;
+        width: 27%;*/
         margin: 0 1.7%;
-        padding: 25px 2%;
-        margin-bottom: 0;
+        padding: 25px 20px;
+        margin: 0 2px;
     }
 
     nav li:first-child a {
-        margin-left: 0;
+        margin-right: 0;
     }
 
     nav li:last-child a {
-        margin-right: 0;
+        margin-left: 0;
     }
 
 /* ========================
@@ -193,7 +197,7 @@ nav a:hover {
    ======================== */
 
     nav ul li {
-        display: inline;
+        display: inline-block;
     }
 
     .oldie nav a {

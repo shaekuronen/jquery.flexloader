@@ -18,6 +18,35 @@
   <link rel="stylesheet" href="bower_components/flexslider/flexslider.css">
   <link rel="stylesheet" href="css/flexslider_theme.css">
   <link rel="stylesheet" href="bower_components/prism/themes/prism.css">
+  <style>
+  .flexloader-demo-links-title:hover {
+    text-decoration: none;
+  }
+  .flexloader-demo-links {
+    width: 300px;
+    padding: 10px;
+    color: #fff;
+    background-color: #e44d26;
+    position: absolute;
+    top: 100%;
+    left: 2px;
+    display: none;
+/*    opacity: 0;
+    -webkit-transition: opacity 0.3s ease-out;
+       -moz-transition: opacity 0.3s ease-out;
+            transition: opacity 0.3s ease-out;*/
+  }
+/*  .flexloader-demo-links.flexloader-demo-links-visible {
+    opacity: 1;
+    -webkit-transition: opacity 0.3s ease-out;
+       -moz-transition: opacity 0.3s ease-out;
+            transition: opacity 0.3s ease-out;
+  }*/
+  .flexloader-demo-link {
+    display: block;
+    cursor: pointer;
+  }
+  </style>
   <!-- end css -->
 
 </head>
@@ -29,9 +58,21 @@
       <h1 class="title">Flexloader <span style="display:block;font-size:16px;font-weight:normal;">Lazyload Flexslider slides, optionally using Picturefill</span></h1>
       <nav>
         <ul>
+          <li id="flexloader-demo-links-container" style="position:relative;">
+            <a id="flexloader-demo-links-title" class="flexloader-demo-links-title" href="#">DEMOS</a>
+            <ul id="flexloader-demo-links" class="flexloader-demo-links">
+              <li data-link="flexloader-demo-1" class="flexloader-demo-link">Slideshow - No Flexloader</li>
+              <li data-link="flexloader-demo-2" class="flexloader-demo-link">Slideshow - Flexloader</li>
+              <li data-link="flexloader-demo-3" class="flexloader-demo-link">Slideshow - Flexloader + Picturefill</li>
+              <li data-link="flexloader-demo-7" class="flexloader-demo-link">Slideshow - Flexloader + BG Images 1</li>
+              <li data-link="flexloader-demo-8" class="flexloader-demo-link">Slideshow - Flexloader + BG Images 2</li>
+              <li data-link="flexloader-demo-4" class="flexloader-demo-link">Carousel - No Flexloader</li>
+              <li data-link="flexloader-demo-5" class="flexloader-demo-link">Carousel - Flexloader</li>
+              <li data-link="flexloader-demo-6" class="flexloader-demo-link">Carousel - Flexloader + Picturefill</li>
+            </ul>
+          </li>
           <li><a href="https://github.com/shaekuronen/jquery.flexloader">GITHUB</a></li>
           <li><a href="http://plugins.jquery.com/flexloader/">JQUERY</a></li>
-          <li><a href="https://www.npmjs.org/~shaekuronen">NPM</a></li>
         </ul>
       </nav>
     </header>
@@ -275,7 +316,7 @@ $('.flexslider').flexslider({
     <!-- end description -->
 
     <!-- demo 1 -->
-    <div class="flexloader-demo-1">
+    <div id="flexloader-demo-1" class="flexloader-demo-1">
 
       <h4>Demo: Flexslider Slideshow (no Flexloader)</h4>
 
@@ -389,7 +430,7 @@ $('#flexloader-demo-1-slideshow').flexslider({
     <!-- end demo 1 -->
 
     <!-- demo 2 -->
-    <div class="flexloader-demo-2">
+    <div id="flexloader-demo-2" class="flexloader-demo-2">
 
       <h4>Demo: Flexslider Slideshow + Flexloader</h4>
 
@@ -496,7 +537,7 @@ $('#flexloader-demo-2-slideshow').flexslider({
     <!-- end demo 2 -->
 
     <!-- demo 3 -->
-    <div class="flexloader-demo-3">
+    <div id="flexloader-demo-3" class="flexloader-demo-3">
 
       <!-- demo 3 slideshow -->
       <div id="flexloader-demo-3-slideshow" class="flexslider flexloader-demo-3-slideshow">
@@ -1155,7 +1196,7 @@ $('#flexloader-demo-3-slideshow').flexslider({
     <!-- end demo 3 -->
 
     <!-- demo 4 -->
-    <div class="flexloader-demo-4">
+    <div id="flexloader-demo-4" class="flexloader-demo-4">
 
       <h4>Demo: Flexslider Carousel</h4>
 
@@ -1263,7 +1304,7 @@ $('#flexloader-demo-4-carousel').flexslider({
     <!-- end demo 4 -->
 
     <!-- demo 5 -->
-    <div class="flexloader-demo-5">
+    <div id="flexloader-demo-5" class="flexloader-demo-5">
 
       <h4>Demo: Flexslider Carousel + Flexloader</h4>
 
@@ -1377,7 +1418,7 @@ $('#flexloader-demo-5-carousel').flexslider({
     <!-- end demo 5 -->
 
     <!-- demo 6 -->
-    <div class="flexloader-demo-6">
+    <div id="flexloader-demo-6" class="flexloader-demo-6">
 
       <h4>Demo: Flexslider Carousel + Flexloader &amp; Picturefill</h4>
 
@@ -2067,7 +2108,7 @@ $('#flexloader-demo-6-carousel').flexslider({
     <!-- end demo 6 -->
 
     <!-- demo 7 -->
-    <div class="flexloader-demo-7">
+    <div id="flexloader-demo-7" class="flexloader-demo-7">
 
       <h4>Demo: Flexslider Slideshow - Background Images</h4>
 
@@ -2153,7 +2194,7 @@ $('#flexloader-demo-7-slideshow').flexslider({
     <!-- end demo 7 -->
 
     <!-- demo 8 -->
-    <div class="flexloader-demo-8">
+    <div id="flexloader-demo-8" class="flexloader-demo-8">
 
       <h4>Demo: Flexslider Slideshow - Background Images + Bootstrapped Slide 1 &amp; Custom Class Name</h4>
 
@@ -2306,6 +2347,53 @@ $('#flexloader-demo-8-slideshow').flexslider({
   <script src="src/jquery.flexloader.js"></script>
   <script src="js/site/global_object.js"></script>
   <script src="js/site/flexslider_init.js"></script>
+  <script>
+  $('document').ready(function() {
+
+    // show demo links on hover
+    $('#flexloader-demo-links-container').on('mouseenter', function() {
+      $('#flexloader-demo-links').addClass('flexloader-demo-links-visible');
+    });
+
+    // hide demo links
+    $('#flexloader-demo-links').on('mouseleave', function() {
+      $('#flexloader-demo-links').removeClass('flexloader-demo-links-visible');
+    });
+
+    // scroll to demo when a link clicked
+    $('.flexloader-demo-link').on('click', function() {
+
+      // get the id of element to scroll to
+      var scroll_to_id = '#' + $(this).attr('data-link');
+
+      $('html, body').animate({
+          scrollTop: $(scroll_to_id).offset().top
+      }, 2000);
+
+    });
+
+  });
+  </script>
+  <script>
+  $('#flexloader-demo-links-container').hover(
+    // mouseover
+    function(e) {
+
+      // show the demo links
+      $('#flexloader-demo-links').fadeIn(300);
+
+    },
+    //  mouseout
+    function(e) {
+
+      // hide the demo links
+      $('#flexloader-demo-links').fadeOut(250, function() {
+        $(this).hide();
+      });
+
+    }
+  );
+  </script>
   <!-- end js -->
 
 </body>
