@@ -11,40 +11,24 @@
   <!-- Place favicon.ico and apple-touch-icon(s) in the root directory -->
 
   <!-- css -->
-  <link rel="stylesheet" href="css/normalize.css">
-  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/bootstrap.css">
   <link rel="stylesheet" href="css/demo_7_slides.css">
   <link rel="stylesheet" href="css/demo_8_slides.css">
   <link rel="stylesheet" href="bower_components/flexslider/flexslider.css">
   <link rel="stylesheet" href="css/flexslider_theme.css">
-  <link rel="stylesheet" href="bower_components/prism/themes/prism.css">
+  <link rel="stylesheet" href="bower_components/prism/themes/prism-superhero.css">
   <style>
-  .flexloader-demo-links-title:hover {
-    text-decoration: none;
+  .container {
+    max-width: 1080px;
   }
-  .flexloader-demo-links {
-    width: 300px;
+  .dropdown-menu {
+    width: 260px;
+    background-color: #223240;
     padding: 10px;
-    color: #fff;
-    background-color: #e44d26;
-    position: absolute;
-    top: 100%;
-    left: 2px;
-    display: none;
-/*    opacity: 0;
-    -webkit-transition: opacity 0.3s ease-out;
-       -moz-transition: opacity 0.3s ease-out;
-            transition: opacity 0.3s ease-out;*/
   }
-/*  .flexloader-demo-links.flexloader-demo-links-visible {
-    opacity: 1;
-    -webkit-transition: opacity 0.3s ease-out;
-       -moz-transition: opacity 0.3s ease-out;
-            transition: opacity 0.3s ease-out;
-  }*/
-  .flexloader-demo-link {
-    display: block;
+  .dropdown-menu li {
     cursor: pointer;
+    font-size: 14px;
   }
   </style>
   <!-- end css -->
@@ -53,14 +37,23 @@
 <body>
 
   <!-- header -->
-  <div class="header-container">
-    <header class="wrapper clearfix">
-      <h1 class="title">Flexloader <span style="display:block;font-size:16px;font-weight:normal;">Lazyload Flexslider slides, optionally using Picturefill</span></h1>
-      <nav>
-        <ul>
-          <li id="flexloader-demo-links-container" style="position:relative;">
-            <a id="flexloader-demo-links-title" class="flexloader-demo-links-title" href="#">DEMOS</a>
-            <ul id="flexloader-demo-links" class="flexloader-demo-links">
+  <div class="navbar navbar-default">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">Flexloader</a>
+      </div>
+      <div class="navbar-collapse collapse navbar-responsive-collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="https://github.com/shaekuronen/jquery.flexloader">Github</a></li>
+          <li><a href="http://plugins.jquery.com/flexloader/">jQuery</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Demos <b class="caret"></b></a>
+            <ul class="dropdown-menu">
               <li data-link="flexloader-demo-1" class="flexloader-demo-link">Slideshow - No Flexloader</li>
               <li data-link="flexloader-demo-2" class="flexloader-demo-link">Slideshow - Flexloader</li>
               <li data-link="flexloader-demo-3" class="flexloader-demo-link">Slideshow - Flexloader + Picturefill</li>
@@ -71,29 +64,27 @@
               <li data-link="flexloader-demo-6" class="flexloader-demo-link">Carousel - Flexloader + Picturefill</li>
             </ul>
           </li>
-          <li><a href="https://github.com/shaekuronen/jquery.flexloader">GITHUB</a></li>
-          <li><a href="http://plugins.jquery.com/flexloader/">JQUERY</a></li>
         </ul>
-      </nav>
-    </header>
+      </div>
+    </div>
   </div>
-  <!-- end header -->
+
+
 
   <!-- container -->
-  <div class="wrapper clearfix">
+  <div class="container">
 
     <!-- description -->
-    <div class="flexloader-description">
+    <div class="jumbotron">
+      <h2>Flexloader is a lazyloading solution for Flexslider</h2>
+      <h5>Slideshow: load the current, next, and prev slide.</h5>
+      <h5>Carousel: load currently visible slides, next slides, and prev slides.</h5>
+    </div>
+    <!-- end description -->
 
-      <h4>Flexloader is a lazyloading solution for Flexslider</h4>
+      <p>To configure, add $.flexloader to the start and after events in Flexslider init.</p>
 
-      <p>In a Flexslider slideshow with one slide visible, Flexloader loads the current, next, and prev slide.</p>
-
-      <p>In a Flexslider carousel with multiple slides visible, Flexloader loads the currently visible slides, the next slides, and the prev slides.</p>
-
-      <p>Configuration is easy, you just add $.flexloader to the start and after events in Flexslider init and pass in the slider instance as an argument</p>
-
-      <pre class="language-javascript">
+      <pre>
         <code class="language-javascript">
 $('.flexslider').flexslider({
   start: function(slider) {
@@ -106,9 +97,9 @@ $('.flexslider').flexslider({
         </code>
       </pre>
 
-      <p>The default behavior is to load HTML markup following the Flexslider convention of li > img</p>
+      <p>Default: load HTML markup following the Flexslider convention of li > img</p>
 
-      <pre class="language-markup">
+      <pre>
         <code class="language-markup">
 &lt;div class=&quot;flexslider&quot;&gt;
   &lt;ul class=&quot;slides&quot;&gt;
@@ -124,11 +115,13 @@ $('.flexslider').flexslider({
         </code>
       </pre>
 
-      <h4>There are two options: Picturefill and background-images.</h4>
+      <div class="well">
+        <h4>Two options: Picturefill and Background-Images</h4>
+      </div>
 
-      <p>To implement Picturefill, create a Flexslider instance like this</p>
+      <p>Picturefill JS</p>
 
-      <pre class="language-javascript">
+      <pre>
         <code class="language-javascript">
 $('.flexslider').flexslider({
   start: function(slider) {
@@ -141,9 +134,9 @@ $('.flexslider').flexslider({
         </code>
       </pre>
 
-      <p>with HTML like this</p>
+      <p>Picturefill HTML</p>
 
-      <pre class="language-markup">
+      <pre>
         <code class="language-markup">
 &lt;div class=&quot;flexslider&quot;&gt;
   &lt;ul class=&quot;slides&quot;&gt;
@@ -186,9 +179,9 @@ $('.flexslider').flexslider({
         </code>
       </pre>
 
-      <p>To use background-images instead of img element</p>
+      <p>Background-Images JS</p>
 
-      <pre class="language-javascript">
+      <pre>
         <code class="language-javascript">
 $('.flexslider').flexslider({
   start: function(slider) {
@@ -201,9 +194,9 @@ $('.flexslider').flexslider({
         </code>
       </pre>
 
-      <p>with HTML like this</p>
+      <p>Background-Images HTML</p>
 
-      <pre class="language-markup">
+      <pre>
         <code class="language-markup">
 &lt;div class=&quot;flexslider&quot;&gt;
   &lt;ul class=&quot;slides&quot;&gt;
@@ -215,9 +208,9 @@ $('.flexslider').flexslider({
         </code>
       </pre>
 
-      <p>and the CSS</p>
+      <p>Background-Images CSS</p>
 
-      <pre class="language-css">
+      <pre>
         <code class="language-css">
 .slide {
   background-repeat: no-repeat;
@@ -248,9 +241,9 @@ $('.flexslider').flexslider({
         </code>
       </pre>
 
-      <p>Flexloader defaults to adding the class 'flexloader-background-image-loaded' to slides that have been loaded.  If you want to change the default, it's possible to configure.</p>
+      <p>Background-Images - Add Custom Images Loaded Class</p>
 
-      <pre class="language-javascript">
+      <pre>
         <code class="language-javascript">
 $('.flexslider').flexslider({
   start: function(slider) {
@@ -263,9 +256,10 @@ $('.flexslider').flexslider({
         </code>
       </pre>
 
-      <p>This configuration will add the class 'your-class-name' to each loaded slide, so you would update your CSS to this...</p>
+      <p>Background-Images - Default Class: 'flexloader-background-image-loaded'</p>
+      <p class="text-info">In CSS below, class name has be changed to 'your-class-name'</p>
 
-      <pre class="language-css">
+      <pre>
         <code class="language-css">
 .slide {
   background-repeat: no-repeat;
@@ -296,9 +290,10 @@ $('.flexslider').flexslider({
         </code>
       </pre>
 
-      <p>To further improve loading performance, you can bootstrap the first slide.  This starts downloading the background image earlier and ultimately leads to a quicker window.load event.  To bootstrap the first slide (or any slide) add the loaded slide class, either the default 'flexloader-background-image-loaded' or 'your-custom-class'.  After the window.load event Flexslider will init, fire start event, and Flexloader will download the next and prev slides.</p>
+      <p>Background Images - Bootstrap Slide 1</p>
+      <p class="text-info">Bootstrapping the first slide improves performance by starting the image download earlier</p>
 
-      <pre class="language-markup">
+      <pre>
         <code class="language-markup">
 &lt;div class=&quot;flexslider&quot;&gt;
   &lt;ul class=&quot;slides&quot;&gt;
@@ -311,9 +306,6 @@ $('.flexslider').flexslider({
 &lt;/div&gt;
         </code>
       </pre>
-
-    </div>
-    <!-- end description -->
 
     <!-- demo 1 -->
     <div id="flexloader-demo-1" class="flexloader-demo-1">
@@ -395,7 +387,7 @@ $('.flexslider').flexslider({
       <!-- end demo 1 slideshow -->
 
       <!-- demo 1 html sample -->
-      <pre class="language-markup">
+      <pre>
         <code class="language-markup">
 &lt;div class=&quot;flexslider&quot;&gt;
   &lt;ul class=&quot;slides&quot;&gt;
@@ -413,7 +405,7 @@ $('.flexslider').flexslider({
       <!-- end demo 1 html sample -->
 
       <!-- demo 1 js sample -->
-      <pre class="language-javascript">
+      <pre>
         <code class="language-javascript">
 $('#flexloader-demo-1-slideshow').flexslider({
   namespace: "flexloader-demo-1-",
@@ -494,7 +486,7 @@ $('#flexloader-demo-1-slideshow').flexslider({
       <!-- end demo 2 slideshow -->
 
       <!-- demo 2 html sample -->
-      <pre class="language-markup">
+      <pre>
         <code class="language-markup">
 &lt;div class=&quot;flexslider&quot;&gt;
   &lt;ul class=&quot;slides&quot;&gt;
@@ -512,7 +504,7 @@ $('#flexloader-demo-1-slideshow').flexslider({
       <!-- end demo 2 html sample -->
 
       <!-- demo 2 js sample -->
-      <pre class="language-javascript">
+      <pre>
         <code class="language-javascript">
 $('#flexloader-demo-2-slideshow').flexslider({
   namespace: "flexloader-demo-2-",
@@ -539,10 +531,10 @@ $('#flexloader-demo-2-slideshow').flexslider({
     <!-- demo 3 -->
     <div id="flexloader-demo-3" class="flexloader-demo-3">
 
+      <h4>Demo: Flexslider Slideshow + Flexloader &amp; Picturefill</h4>
+
       <!-- demo 3 slideshow -->
       <div id="flexloader-demo-3-slideshow" class="flexslider flexloader-demo-3-slideshow">
-
-        <h4>Demo: Flexslider Slideshow + Flexloader &amp; Picturefill</h4>
 
         <ul class="slides">
 
@@ -1111,7 +1103,7 @@ $('#flexloader-demo-2-slideshow').flexslider({
       <!-- end demo 3 slideshow -->
 
       <!-- demo 3 html sample -->
-      <pre class="language-markup">
+      <pre>
         <code class="language-markup">
 &lt;div class=&quot;flexslider&quot;&gt;
   &lt;ul class=&quot;slides&quot;&gt;
@@ -1171,7 +1163,7 @@ $('#flexloader-demo-2-slideshow').flexslider({
       <!-- end demo 3 html sample -->
 
       <!-- demo 3 js sample -->
-      <pre class="language-javascript">
+      <pre>
         <code class="language-javascript">
 $('#flexloader-demo-3-slideshow').flexslider({
   namespace: "flexloader-demo-3-",
@@ -1260,7 +1252,7 @@ $('#flexloader-demo-3-slideshow').flexslider({
       <!-- end demo 4 carousel -->
 
       <!-- demo 4 html sample -->
-      <pre class="language-markup">
+      <pre>
         <code class="language-markup">
 &lt;div class=&quot;flexslider&quot;&gt;
   &lt;ul class=&quot;slides&quot;&gt;
@@ -1278,7 +1270,7 @@ $('#flexloader-demo-3-slideshow').flexslider({
       <!-- end demo 4 html sample -->
 
       <!-- demo 4 js sample -->
-      <pre class="language-javascript">
+      <pre>
         <code class="language-javascript">
 $('#flexloader-demo-4-carousel').flexslider({
   namespace: "flexloader-demo-4-",
@@ -1368,7 +1360,7 @@ $('#flexloader-demo-4-carousel').flexslider({
       <!-- end demo 5 carousel -->
 
       <!-- demo 5 html sample -->
-      <pre class="language-markup">
+      <pre>
         <code class="language-markup">
 &lt;div class=&quot;flexslider&quot;&gt;
   &lt;ul class=&quot;slides&quot;&gt;
@@ -1386,7 +1378,7 @@ $('#flexloader-demo-4-carousel').flexslider({
       <!-- end demo 5 html sample -->
 
       <!-- demo 5 js sample -->
-      <pre class="language-javascript">
+      <pre>
         <code class="language-javascript">
 $('#flexloader-demo-5-carousel').flexslider({
   namespace: "flexloader-demo-5-",
@@ -2058,7 +2050,7 @@ $('#flexloader-demo-5-carousel').flexslider({
       <!-- end demo 6 carousel -->
 
       <!-- demo 6 html sample -->
-      <pre class="language-markup">
+      <pre>
         <code class="language-markup">
 &lt;div class=&quot;flexslider&quot;&gt;
   &lt;ul class=&quot;slides&quot;&gt;
@@ -2076,7 +2068,7 @@ $('#flexloader-demo-5-carousel').flexslider({
       <!-- end demo 6 html sample -->
 
       <!-- demo 6 js sample -->
-      <pre class="language-javascript">
+      <pre>
         <code class="language-javascript">
 $('#flexloader-demo-6-carousel').flexslider({
   namespace: "flexloader-demo-6-",
@@ -2155,7 +2147,7 @@ $('#flexloader-demo-6-carousel').flexslider({
       <!-- end demo 7 slideshow -->
 
       <!-- demo 7 html sample -->
-      <pre class="language-markup">
+      <pre>
         <code class="language-markup">
 &lt;div class=&quot;flexslider&quot;&gt;
   &lt;ul class=&quot;slides&quot;&gt;
@@ -2169,7 +2161,7 @@ $('#flexloader-demo-6-carousel').flexslider({
       <!-- end demo 7 html sample -->
 
       <!-- demo 7 js sample -->
-      <pre class="language-javascript">
+      <pre>
         <code class="language-javascript">
 $('#flexloader-demo-7-slideshow').flexslider({
   namespace: "flexloader-demo-7-",
@@ -2241,7 +2233,7 @@ $('#flexloader-demo-7-slideshow').flexslider({
       <!-- end demo 8 slideshow -->
 
       <!-- demo 8 html sample -->
-      <pre class="language-markup">
+      <pre>
         <code class="language-markup">
 &lt;div class=&quot;flexslider&quot;&gt;
   &lt;ul class=&quot;slides&quot;&gt;
@@ -2257,7 +2249,7 @@ $('#flexloader-demo-7-slideshow').flexslider({
       <!-- end demo 8 html sample -->
 
       <!-- demo 8 js sample -->
-      <pre class="language-javascript">
+      <pre>
         <code class="language-javascript">
 $('#flexloader-demo-8-slideshow').flexslider({
   namespace: "flexloader-demo-8-",
@@ -2285,7 +2277,7 @@ $('#flexloader-demo-8-slideshow').flexslider({
       <!-- end demo 8 js sample -->
 
       <!-- demo 8 css sample -->
-      <pre class="language-css">
+      <pre>
         <code class="language-css">
 .flexloader-demo-8-slide {
   background-repeat: no-repeat;
@@ -2341,6 +2333,7 @@ $('#flexloader-demo-8-slideshow').flexslider({
 
   <!-- js -->
   <script src="bower_components/jquery/dist/jquery.min.js"></script>
+  <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
   <script src="bower_components/flexslider/jquery.flexslider.js"></script>
   <script src="bower_components/picturefill/picturefill.js"></script>
   <script src="bower_components/prism/prism.js"></script>
@@ -2349,16 +2342,6 @@ $('#flexloader-demo-8-slideshow').flexslider({
   <script src="js/site/flexslider_init.js"></script>
   <script>
   $('document').ready(function() {
-
-    // show demo links on hover
-    $('#flexloader-demo-links-container').on('mouseenter', function() {
-      $('#flexloader-demo-links').addClass('flexloader-demo-links-visible');
-    });
-
-    // hide demo links
-    $('#flexloader-demo-links').on('mouseleave', function() {
-      $('#flexloader-demo-links').removeClass('flexloader-demo-links-visible');
-    });
 
     // scroll to demo when a link clicked
     $('.flexloader-demo-link').on('click', function() {
@@ -2373,26 +2356,6 @@ $('#flexloader-demo-8-slideshow').flexslider({
     });
 
   });
-  </script>
-  <script>
-  $('#flexloader-demo-links-container').hover(
-    // mouseover
-    function(e) {
-
-      // show the demo links
-      $('#flexloader-demo-links').fadeIn(300);
-
-    },
-    //  mouseout
-    function(e) {
-
-      // hide the demo links
-      $('#flexloader-demo-links').fadeOut(250, function() {
-        $(this).hide();
-      });
-
-    }
-  );
   </script>
   <!-- end js -->
 
