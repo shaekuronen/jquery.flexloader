@@ -21,6 +21,9 @@
   .container {
     max-width: 1080px;
   }
+  body {
+    padding-top: 70px;
+  }
   .dropdown-menu {
     width: 260px;
     background-color: #223240;
@@ -37,7 +40,7 @@
 <body>
 
   <!-- header -->
-  <div class="navbar navbar-default">
+  <div class="navbar navbar-default navbar-fixed-top">
     <div class="container">
       <div class="navbar-header">
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
@@ -45,7 +48,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="#">Flexloader</a>
+        <a class="navbar-brand" href="https://github.com/shaekuronen/jquery.flexloader">Flexloader</a>
       </div>
       <div class="navbar-collapse collapse navbar-responsive-collapse">
         <ul class="nav navbar-nav navbar-right">
@@ -2350,7 +2353,7 @@ $('#flexloader-demo-8-slideshow').flexslider({
       var scroll_to_id = '#' + $(this).attr('data-link');
 
       $('html, body').animate({
-          scrollTop: $(scroll_to_id).offset().top
+          scrollTop: $(scroll_to_id).offset().top - 70
       }, 2000);
 
     });
