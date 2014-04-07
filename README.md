@@ -35,7 +35,7 @@ Default: load HTML markup following the Flexslider convention of li > img
       <img src="img/1x1.gif" data-original="img/slideshow/04.jpg">
     </li>
     ...
-    <li>
+    <li class="slide slide-16">
       <img src="img/1x1.gif" data-original="img/slideshow/16.jpg">
     </li>
     <li class="slide slide-01 clone">
