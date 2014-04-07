@@ -7,7 +7,7 @@ Flexloader loads the current, next, and prev slide in a Flexslider slideshow.  I
 
 See demos [http://shaekuronen.github.io/jquery.flexloader/](http://shaekuronen.github.io/jquery.flexloader/)
 
-Configuration is easy, you add $.flexloader to the start and after events in Flexslider init
+To configure, add $.flexloader to the start and after events in Flexslider init.
 ```javascript
 $('.flexslider').flexslider({
   start: function(slider) {
@@ -18,7 +18,7 @@ $('.flexslider').flexslider({
   }
 });
 ```
-The default behavior is to load HTML markup following the Flexslider convention of li > img
+Default: load HTML markup following the Flexslider convention of li > img
 ```html
 <div class="flexslider">
   <ul class="slides">
@@ -32,9 +32,9 @@ The default behavior is to load HTML markup following the Flexslider convention 
   </ul>
 </div>
 ```
-There are two options: Picturefill and background-images.
+Two options: Picturefill and Background-Images
 
-To implement Picturefill, create a Flexslider instance like this
+Picturefill JS
 ```javascript
 $('.flexslider').flexslider({
   start: function(slider) {
@@ -45,7 +45,7 @@ $('.flexslider').flexslider({
   }
 });
 ```
-with HTML like this
+Picturefill HTML
 ```html
 <div class="flexslider">
   <ul class="slides">
@@ -86,7 +86,7 @@ with HTML like this
   </ul>
 </div>
 ```
-To use background-images instead of img element
+Background-Images JS
 ```javascript
 $('.flexslider').flexslider({
   start: function(slider) {
@@ -97,7 +97,7 @@ $('.flexslider').flexslider({
   }
 });
 ```
-with HTML like this
+Background-Images HTML
 ```html
 <div class="flexslider">
   <ul class="slides">
@@ -107,7 +107,7 @@ with HTML like this
   </ul>
 </div>
 ```
-and the CSS
+Background-Images CSS
 ```css
 .slide {
   background-repeat: no-repeat;
@@ -147,7 +147,8 @@ $('.flexslider').flexslider({
   }
 });
 ```
-This configuration will add the class 'your-class-name' to each loaded slide, so you would update your CSS to this...
+Background-Images - Default Class: 'flexloader-background-image-loaded'
+In CSS below, class name has be changed to 'your-class-name'
 ```css
 .slide {
   background-repeat: no-repeat;
@@ -176,7 +177,8 @@ This configuration will add the class 'your-class-name' to each loaded slide, so
   }
 }
 ```
-To further improve loading performance, you can bootstrap the first slide.  This starts downloading the background image earlier and ultimately leads to a quicker window.load event.  To bootstrap the first slide (or any slide) add the loaded slide class, either the default '.flexloader-background-image-loaded' or '.your-custom-class'.  After the window.load event Flexslider will init, fire start event, and download the next and prev slides.
+Background Images - Preload Slide 1
+Preloading the first slide improves performance by starting the image download earlier
 ```html
 <div class="flexslider">
   <ul class="slides">
