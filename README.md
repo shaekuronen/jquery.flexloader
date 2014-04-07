@@ -19,16 +19,33 @@ Default: load HTML markup following the Flexslider convention of li > img
 ```html
 <div class="flexslider">
   <ul class="slides">
-    <li>
+    <li class="slide slide-16 clone">
+      <img src="img/1x1.gif" data-original="img/slideshow/16.jpg">
+    </li>
+    <li class="slide slide-01">
       <img src="img/1x1.gif" data-original="img/slideshow/01.jpg">
+    </li>
+    <li class="slide slide-02">
+      <img src="img/1x1.gif" data-original="img/slideshow/02.jpg">
+    </li>
+    <li class="slide slide-03">
+      <img src="img/1x1.gif" data-original="img/slideshow/03.jpg">
+    </li>
+    <li class="slide slide-04">
+      <img src="img/1x1.gif" data-original="img/slideshow/04.jpg">
     </li>
     ...
     <li>
       <img src="img/1x1.gif" data-original="img/slideshow/16.jpg">
     </li>
+    <li class="slide slide-01 clone">
+      <img src="img/1x1.gif" data-original="img/slideshow/01.jpg">
+    </li>
   </ul>
 </div>
 ```
+On Flexslider start, Flexloader will update the img src of Slides 1, c1, 2, 16, & c16 ("c" prefix indicates cloned slide).
+When the next slide is animated to, Flexloader will update the img src of Slide 3.  Slides 1, c1, & 2 are already loaded and will not updated.
 ##### Two options: Picturefill and Background-Images
 
 Picturefill JS
