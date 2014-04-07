@@ -104,17 +104,35 @@ $('.flexslider').flexslider({
         <code class="language-markup">
 &lt;div class=&quot;flexslider&quot;&gt;
   &lt;ul class=&quot;slides&quot;&gt;
-    &lt;li&gt;
+    &lt;li class=&quot;slide slide-16 clone&quot;&gt;
+      &lt;img src=&quot;img/1x1.gif&quot; data-original=&quot;img/slideshow/16.jpg&quot;&gt;
+    &lt;/li&gt;
+    &lt;li class=&quot;slide slide-01&quot;&gt;
       &lt;img src=&quot;img/1x1.gif&quot; data-original=&quot;img/slideshow/01.jpg&quot;&gt;
+    &lt;/li&gt;
+    &lt;li class=&quot;slide slide-02&quot;&gt;
+      &lt;img src=&quot;img/1x1.gif&quot; data-original=&quot;img/slideshow/02.jpg&quot;&gt;
+    &lt;/li&gt;
+    &lt;li class=&quot;slide slide-03&quot;&gt;
+      &lt;img src=&quot;img/1x1.gif&quot; data-original=&quot;img/slideshow/03.jpg&quot;&gt;
+    &lt;/li&gt;
+    &lt;li class=&quot;slide slide-04&quot;&gt;
+      &lt;img src=&quot;img/1x1.gif&quot; data-original=&quot;img/slideshow/04.jpg&quot;&gt;
     &lt;/li&gt;
     ...
     &lt;li&gt;
       &lt;img src=&quot;img/1x1.gif&quot; data-original=&quot;img/slideshow/16.jpg&quot;&gt;
     &lt;/li&gt;
+    &lt;li class=&quot;slide slide-01 clone&quot;&gt;
+      &lt;img src=&quot;img/1x1.gif&quot; data-original=&quot;img/slideshow/01.jpg&quot;&gt;
+    &lt;/li&gt;
   &lt;/ul&gt;
 &lt;/div&gt;
         </code>
       </pre>
+
+      <p>On Flexslider start, Flexloader will update the img src of Slides 1, c1, 2, 16, & c16 ("c" prefix indicates cloned slide).</p>
+      <p>When the next slide is animated to, Flexloader will update the img src of Slide 3.  Slides 1, c1, & 2 are already loaded and will not updated.</p>
 
       <div class="well">
         <h4>Two options: Picturefill and Background-Images</h4>

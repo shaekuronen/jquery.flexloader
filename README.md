@@ -45,6 +45,7 @@ Default: load HTML markup following the Flexslider convention of li > img
 </div>
 ```
 On Flexslider start, Flexloader will update the img src of Slides 1, c1, 2, 16, & c16 ("c" prefix indicates cloned slide).
+
 When the next slide is animated to, Flexloader will update the img src of Slide 3.  Slides 1, c1, & 2 are already loaded and will not updated.
 ##### Two options: Picturefill and Background-Images
 
