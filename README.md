@@ -1,7 +1,4 @@
-jquery.flexloader
-=================
-
-Lazyload Flexslider slides, optionally using Picturefill
+### Flexloader: lazyload Flexslider images
 
 Flexloader loads the current, next, and prev slide in a Flexslider slideshow.  In a Flexslider carousel, Flexloader loads the current, next, and prev slides.
 
@@ -32,7 +29,7 @@ Default: load HTML markup following the Flexslider convention of li > img
   </ul>
 </div>
 ```
-Two options: Picturefill and Background-Images
+####Two options: Picturefill and Background-Images
 
 Picturefill JS
 ```javascript
