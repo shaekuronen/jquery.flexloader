@@ -1,4 +1,4 @@
-### Flexloader: lazyload Flexslider images
+## Flexloader: lazyload Flexslider images
 
 Flexloader loads the current, next, and prev slide in a Flexslider slideshow.  In a Flexslider carousel, Flexloader loads the current, next, and prev slides.
 
