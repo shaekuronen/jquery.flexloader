@@ -4,6 +4,11 @@ Flexloader loads the current, next, and prev slide in a Flexslider slideshow.  I
 
 See demos [http://shaekuronen.github.io/jquery.flexloader/](http://shaekuronen.github.io/jquery.flexloader/)
 
+Add to project
+```shell
+bower install flexloader
+```
+
 To configure, add $.flexloader to the start and after events in Flexslider init.
 ```javascript
 $('.flexslider').flexslider({
