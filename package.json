@@ -3,6 +3,10 @@
   "title": "jQuery Flexloader",
   "description": "Lazyload Flexslider slides, optionally using Picturefill",
   "author": "Shae Kuronen",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/shaekuronen/jquery.flexloader.git"
+  },
   "homepage": "https://github.com/shaekuronen/jquery.flexloader/",
   "version": "0.3.2",
   "devDependencies": {
@@ -16,5 +20,9 @@
   },
   "scripts": {
     "test": "grunt travis --verbose"
-  }
+  },
+  "keywords": [
+    "jquery-plugin",
+    "ecosystem:jquery"
+  ]
 }
