@@ -389,10 +389,10 @@
 		// end plugin prototype methods
 
 		// wrapper to prevent multiple instances of flexloader
-		if ( !$.data(this, 'plugin_flexloader') ) {
+		if ( !$.data(flexslider, 'plugin_flexloader') ) {
 
 			// add a data attribute
-			$.data(this, 'plugin_flexloader');
+			$.data(flexslider, 'plugin_flexloader');
 
 			// create an instance of flexloader
 			return new Flexloader(flexslider, options);
